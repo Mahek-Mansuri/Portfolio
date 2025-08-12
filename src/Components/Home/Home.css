@@ -1,0 +1,180 @@
+/* Hero background and overlay */
+.DevPic {
+    background-image: url("../../Assets/dev-pic.png");
+    min-height: 920px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: block;
+    /* ensure content sits above overlay */
+    z-index: 1;
+}
+
+/* dark overlay so nav text stays readable on busy images */
+.DevPic::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 40%, rgba(0, 0, 0, 0.35) 100%);
+    z-index: 0;
+}
+
+/* Make sure Navbar content sits above the overlay */
+.custom-navbar,
+.custom-navbar .container,
+.custom-navbar .navbar-collapse,
+.custom-navbar .nav {
+    position: relative;
+    z-index: 2;
+}
+
+/* Navbar spacing */
+.custom-navbar {
+    padding-top: 18px;
+    padding-bottom: 0;
+    background: transparent;
+    /* transparent so overlay shows through */
+}
+
+/* Nav link styles (keeps your original look) */
+.Nav-link {
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: color 0.15s ease;
+}
+
+.Nav-link:hover {
+    color: #fffac0 !important;
+}
+
+.Nav-link.active {
+    color: #ffb86b;
+    font-weight: 600;
+}
+
+/* Nav item spacing */
+.Nav-items {
+    padding: 6px 12px;
+    /* reduced padding to fit inside navbar */
+}
+
+/* LinkedIn icon style */
+.linkedin-icon,
+.fa-square-linkedin {
+    font-size: 1.15rem;
+    background-color: white;
+    color: #0a66c2;
+    /* linkedin blue inside white box */
+    border-radius: 6px;
+    padding: 6px 7px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Toggler (hamburger) customization - white 3-bar icon */
+.navbar .custom-toggler {
+    border: 0;
+    padding: 6px;
+    margin-right: 0;
+    background: transparent;
+}
+
+/* Create a white 3-bar hamburger using pseudo elements */
+.navbar .custom-toggler .navbar-toggler-icon {
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.navbar .custom-toggler .navbar-toggler-icon::before,
+.navbar .custom-toggler .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+}
+
+.navbar .custom-toggler .navbar-toggler-icon::before {
+    top: -7px;
+}
+
+.navbar .custom-toggler .navbar-toggler-icon::after {
+    top: 7px;
+}
+
+
+
+/* Collapse menu overlay on small screens for better contrast */
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.6);
+        position: absolute !important;
+        top: 56px;
+        /* below the toggler */
+        right: 12px;
+        left: 12px;
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        z-index: 999;
+    }
+
+    /* center collapsed links */
+    .navbar-collapse .nav {
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+    }
+
+    .DevPic {
+        min-height: 520px;
+        /* slightly shorter on mobile for better fit */
+    }
+
+    .Nav-items {
+        padding: 6px 4px;
+    }
+
+    .hamburgr {
+        padding-left: 18.5rem !important;
+    }
+
+    /* hide background overlay inset a bit to keep things compact
+     (overlay remains but collapse sits above it). */
+}
+
+/* Desktop / tablet tweaks */
+@media (min-width: 768px) {
+    .navbar-collapse {
+        background: transparent !important;
+        position: static !important;
+        box-shadow: none;
+    }
+
+    .hamburgr {
+        padding-left: 18.5rem !important;
+    }
+}
+
+/* small screens fallback */
+@media (max-width: 420px) {
+    .DevPic {
+        min-height: 252px;
+    }
+
+    .linkedin-icon {
+        font-size: 1rem;
+        padding: 5px 6px;
+        border-radius: 5px;
+    }
+
+    .hamburgr {
+        padding-left: 20.5rem !important;
+    }
+}
