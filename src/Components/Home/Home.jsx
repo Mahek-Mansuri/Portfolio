@@ -1,12 +1,13 @@
 // Home.jsx
-import React from 'react';
+import React, {useContext  } from 'react';
 import './Home.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareLinkedin } from '@fortawesome/free-brands-svg-icons';
-
+import { Sun, Moon } from 'lucide-react';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 
 export default function Home() {
@@ -14,10 +15,13 @@ export default function Home() {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
-  
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className="DevPic">
+    <div className="DevPic" 
+    
+      >
       <Navbar expand="md" variant="dark" className="custom-navbar" collapseOnSelect>
         <Container fluid="lg" className="px-4 hamburgr">
           {/* optional brand placeholder - kept visually hidden for accessibility */}
@@ -38,10 +42,18 @@ export default function Home() {
               <Nav.Item className="Nav-items">
                 <Nav.Link onClick={() => scrollToSection('contact')} className="Nav-link">Contact</Nav.Link>
               </Nav.Item>
-              <Nav.Item className="Nav-items">
+              <Nav.Item className="Nav-items d-flex gap-1">
                 <Nav.Link className="Nav-link-2" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faSquareLinkedin} className="linkedin-icon" />
+                  <FontAwesomeIcon icon={faSquareLinkedin} className="linkedin-icon"
+                  style={{color: theme === "dark" ? "#1469c7" : "black"}}
+                  />
                 </Nav.Link>
+                <button
+                  onClick={toggleTheme}
+                  style={{color: theme === "dark" ? "white" : "wheat", paddingLeft:'10px'}}
+                >
+                  {theme === 'dark' ?  <Moon size={20} /> :<Sun size={20} />}
+                </button>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
@@ -50,4 +62,3 @@ export default function Home() {
     </div>
   );
 }
-

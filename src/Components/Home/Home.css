@@ -26,6 +26,7 @@
 .custom-navbar .navbar-collapse,
 .custom-navbar .nav {
     position: relative;
+    justify-content: end;
     z-index: 2;
 }
 
@@ -33,6 +34,7 @@
 .custom-navbar {
     padding-top: 18px;
     padding-bottom: 0;
+    padding-left: 185px;
     background: transparent;
     /* transparent so overlay shows through */
 }
@@ -68,7 +70,6 @@
     color: #0a66c2;
     /* linkedin blue inside white box */
     border-radius: 6px;
-    padding: 6px 7px;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
 }
 

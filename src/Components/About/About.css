@@ -41,7 +41,7 @@
   border-radius: inherit;
   padding: 1px;
   /* thinner border = smaller glow */
-  background: linear-gradient(90deg,
+  background:  linear-gradient(90deg,
       #00bfff 0%,
       #7c4dff 40%,
       #ff9900 75%,
