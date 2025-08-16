@@ -1,4 +1,382 @@
+/* ===============================
+   Portfolio Section - Base Styles
+================================= */
 .portfolio-section {
-  background-color: var(--section-bg);
+  padding: 6rem 0;
+  transition: background-color 0.4s ease;
+}
+
+.light-theme {
+  background-color: #f9fafb;
+  --card-bg: #ffffff;
+  --text-color: #1f2937;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --hover-bg: #f3f4f6;
+  --section-title: #0e7490;
+  --accent-color: #0e7490;
+  --filter-bg: #f3f4f6;
+  --filter-active: #0e7490;
+  --filter-text: #4b5563;
+  --filter-active-text: #ffffff;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --soft-shadow-color: rgba(8, 12, 20, 0.15);
+}
+
+.dark-theme {
+  background-color: #111827;
+  --card-bg: #1f2937;
+  --text-color: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+  --hover-bg: #374151;
+  --section-title: #30b9f5;
+  --accent-color: #0e7490;
+  --filter-bg: #1f2937;
+  --filter-active: #3b82f6;
+  --filter-text: #d1d5db;
+  --filter-active-text: #ffffff;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  --soft-shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* ===============================
+   Section Header
+================================= */
+.section-headerp {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.section-subtitlep {
+  display: block;
+  color: var(--accent-color) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.section-titlep {
+  color: var(--section-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.section-descriptionp {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 auto;
+}
+
+/* ===============================
+   Portfolio Filters
+================================= */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.25rem;
+  background-color: var(--filter-bg);
+  color: var(--filter-text);
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--hover-bg);
+}
+
+.filter-btn.active {
+      background-color: #0e7490;
+  color: var(--filter-active-text);
+}
+
+/* ===============================
+   Portfolio Grid & Cards
+================================= */
+/* .portfolio-grid {
+  gap: 2rem;
+} */
+
+.portfolio-item {
+  margin-bottom: 10rem;
+}
+
+.portfolio-card-wrapper {
+  position: relative;
+  height: 100%;
+  border-radius: 12px;
+  overflow: visible;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: var(--card-shadow);
+  background: var(--card-bg);
+}
+
+.portfolio-card-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* Card Media */
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.card-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.portfolio-card-wrapper:hover .card-media-img {
+  transform: scale(1.04);
+}
+
+.media-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-card-wrapper:hover .media-overlay {
+  opacity: 0.85;
+}
+
+.category-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #0e7490;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+/* ===============================
+   Hover Effects for Info Card
+================================= */
+.info-cardP {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: -85px;
+  padding: 0;
+  z-index: 5;
+  box-shadow: 0 12px 40px rgba(13, 20, 30, 0.08);
+  border: none;
+  transition: transform 360ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.info-cardP .card-bodyP {
+  color: white;
+  background: #0e7490;
+  box-shadow: 10px 15px 18px rgba(23, 23, 36, 0.03);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 320ms ease;
+}
+
+
+.portfolio-card-wrapper:hover .info-cardP {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(8, 12, 20, 0.28);
+}
+
+/* soft shadow bloom under info card */
+.info-cardP::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -28px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--soft-shadow-color);
+  filter: blur(18px);
+  transform: translateY(12px) scale(0.96);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: all 420ms cubic-bezier(.2,.9,.2,1);
+}
+
+.portfolio-card-wrapper:hover .info-cardP::after {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* make card-body dark + text white on hover */
+.portfolio-card-wrapper:hover .info-cardP .card-bodyP {
+  background: white;
+  color: black;
+}
+
+.portfolio-card-wrapper:hover .info-cardP .card-bodyP * {
+  color: inherit !important;
+}
+
+/* Card text styles */
+.card-subtitleP {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.card-titleP {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.6px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.white {
+  color: white !important;
+}
+
+/* View project button */
+.view-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  color: white;
+  font-weight: 600;
+  background: none;
+  border: none;
+  /* border-bottom: 2px solid var(--accent-color); */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  
+}
+
+.view-project-btn:hover {
+  gap: 0.75rem;
   color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.portfolio-card-wrapper:hover .view-project-btn {
+  color: white;
+  border-bottom-color: white;
+}
+
+.portfolio-card-wrapper:hover .view-project-btn:hover {
+  color: var(--accent-color) !important;
+  border-bottom-color: var(--accent-color) !important;
+}
+
+/* ===============================
+   Responsive Design
+================================= */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .card-media {
+    height: 240px;
+  }
+  
+  .info-cardP {
+    bottom: -38px;
+    left: 0.9rem;
+    right: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+  
+  .portfolio-filters {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .portfolio-grid {
+    gap: 1.5rem;
+  }
+  
+  .card-media {
+    height: 220px;
+  }
+  
+  .card-titleP {
+    font-size: 1.25rem;
+  }
+  
+  .info-cardP {
+    bottom: -30px;
+    left: 0.75rem;
+    right: 0.75rem;
+  }
+  
+  .info-cardP .card-bodyP {
+    padding: 25px;
+  }
 }

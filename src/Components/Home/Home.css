@@ -7,7 +7,17 @@
     background-size: cover;
     position: relative;
     display: block;
-    /* ensure content sits above overlay */
+    z-index: 1;
+}
+
+.DevPic1{
+    background-image: url("../../Assets/image\ \(1\).png");
+    min-height: 920px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: block;
     z-index: 1;
 }
 
@@ -32,11 +42,31 @@
 
 /* Navbar spacing */
 .custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     padding-top: 18px;
     padding-bottom: 0;
     padding-left: 185px;
-    background: transparent;
-    /* transparent so overlay shows through */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+/* navbar-white */
+
+.custom-navbar1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding-top: 18px;
+    padding-bottom: 0;
+    padding-left: 185px;
+    background: rgba(253, 251, 251, 0.6);
+    backdrop-filter: blur(6px);
 }
 
 /* Nav link styles (keeps your original look) */
@@ -47,14 +77,28 @@
     transition: color 0.15s ease;
 }
 
+/* nav-link-white */
+
+.Nav-link1 {
+    color: rgb(16, 117, 117);
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: color 0.15s ease;
+}
+
 .Nav-link:hover {
-    color: #fffac0 !important;
+    color: cyan !important;
+}
+
+.Nav-link1:hover{
+    color: black !important;
 }
 
 .Nav-link.active {
     color: #ffb86b;
     font-weight: 600;
 }
+
 
 /* Nav item spacing */
 .Nav-items {

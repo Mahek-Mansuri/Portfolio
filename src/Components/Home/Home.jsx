@@ -19,10 +19,9 @@ export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className="DevPic" 
-    
+    <div className={`${theme === 'dark' ? "DevPic" : "DevPic1"}`}
       >
-      <Navbar expand="md" variant="dark" className="custom-navbar" collapseOnSelect>
+      <Navbar expand="md" variant="dark" className={`${theme === 'dark' ? "custom-navbar" : "custom-navbar1"}`} collapseOnSelect>
         <Container fluid="lg" className="px-4 hamburgr">
           {/* optional brand placeholder - kept visually hidden for accessibility */}
           <Navbar.Brand href="#" className="visually-hidden">Sohel Pinjari</Navbar.Brand>
@@ -34,23 +33,23 @@ export default function Home() {
           <Navbar.Collapse id="main-navbar" className="justify-content-end">
             <Nav className="align-items-center">
               <Nav.Item className="Nav-items">
-                <Nav.Link onClick={() => scrollToSection('portfolio')} className="Nav-link">Portfolio</Nav.Link>
+                <Nav.Link onClick={() => scrollToSection('portfolio')} className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}>Portfolio</Nav.Link>
               </Nav.Item>
               <Nav.Item className="Nav-items">
-                <Nav.Link onClick={() => scrollToSection('about')} className="Nav-link">About</Nav.Link>
+                <Nav.Link onClick={() => scrollToSection('about')} className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}>About</Nav.Link>
               </Nav.Item>
               <Nav.Item className="Nav-items">
-                <Nav.Link onClick={() => scrollToSection('contact')} className="Nav-link">Contact</Nav.Link>
+                <Nav.Link onClick={() => scrollToSection('contact')} className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}>Contact</Nav.Link>
               </Nav.Item>
               <Nav.Item className="Nav-items d-flex gap-1">
                 <Nav.Link className="Nav-link-2" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faSquareLinkedin} className="linkedin-icon"
-                  style={{color: theme === "dark" ? "#1469c7" : "black"}}
+                  style={{color: theme === "dark" ? "#1469c7" : "#3b85bf"}}
                   />
                 </Nav.Link>
                 <button
                   onClick={toggleTheme}
-                  style={{color: theme === "dark" ? "white" : "wheat", paddingLeft:'10px'}}
+                  style={{color: theme === "dark" ? "white" : "orange", paddingLeft:'10px'}}
                 >
                   {theme === 'dark' ?  <Moon size={20} /> :<Sun size={20} />}
                 </button>
