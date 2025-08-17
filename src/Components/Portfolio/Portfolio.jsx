@@ -74,9 +74,9 @@ export default function Portfolio() {
     <section className={`portfolio-section ${theme}-theme`}>
       <div className="section-headerp text-center">
         <h5 className="section-subtitlep">Featured Work</h5>
-        <h2 className="section-titlep">Our Portfolio</h2>
+        <h2 className="section-titlep">My Portfolio</h2>
         <p className="section-descriptionp">
-          Explore our latest projects showcasing our expertise in design, development, and marketing.
+          Explore my latest projects showcasing my expertise in design, development, and marketing.
         </p>
       </div>
       

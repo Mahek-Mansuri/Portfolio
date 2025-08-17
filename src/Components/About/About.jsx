@@ -1,3 +1,4 @@
+// About.js
 import React, { useEffect, useContext } from "react";
 import './About.css'
 import AOS from "aos";
@@ -41,9 +42,7 @@ const About = () => {
           style={{ color: theme === "dark" ? "" : "#0e7490" }}>
           About Me
         </h2>
-        <div className={`w-24 h-1 mx-auto mb-6 ${theme === "dark" ? "bg-cyan-500" : "bg-cyan-700"}`}
-        //  style={{backgroundColor: theme === "dark" ? "" : "rgb(14, 116, 144)" }} 
-         ></div>
+        <div className={`w-24 h-1 mx-auto mb-6 ${theme === "dark" ? "bg-cyan-500" : "bg-cyan-700"}`}></div>
         <p className={`max-w-2xl mx-auto text-lg ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}>
           Get to know my background, skills, and what drives me as a developer
         </p>
@@ -51,7 +50,7 @@ const About = () => {
 
       {/* Profile Card */}
       <div
-        className="w-[1300px] rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl"
+        className="w-full max-w-[1300px] rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl"
         data-aos="fade-up"
         style={{
           background: theme === "dark" ? "linear-gradient(145deg, #0f172a, #1e293b)" : "white",
@@ -71,7 +70,7 @@ const About = () => {
           >
             <div className="relative mb-6">
               <div
-                className="w-[22rem] h-[22rem] rounded-full overflow-hidden border-4 shadow-lg"
+                className="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-[22rem] xl:h-[22rem] rounded-full overflow-hidden border-4 shadow-lg"
                 style={{
                   borderColor: theme === "dark" ? "rgba(56, 189, 248, 0.4)" : "bg-cyan-800"
                 }}
@@ -200,25 +199,17 @@ const About = () => {
               Hi, I'm Sohel 👋
             </h1>
             <p
-              className={`mb-6 leading-relaxed ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}
+              className={`mb-6 leading-relaxed main-text ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}
               data-aos="fade-right"
               data-aos-delay="100"
             >
               I'm a passionate <span className={`font-semibold ${theme === "dark" ? "text-cyan-300" : "text-cyan-600"}`}>Web & App Developer</span> with 5+ years of experience creating modern, high-performance applications. I specialize in building responsive interfaces with React and Flutter, crafting products that are not just functional, but provide exceptional user experiences.
             </p>
 
-            {/* <p
-              className={`mb-8 leading-relaxed ${theme === "dark" ? "text-slate-300" : "text-slate-600"}`}
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              My approach combines clean code principles with a keen eye for design, ensuring that every project I work on is scalable, maintainable, and visually appealing. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or hiking in the mountains.
-            </p> */}
-
             {/* Skills Section */}
             <div className="mb-8" data-aos="fade-up">
               <h3 className={`text-xl font-bold mb-4 ${theme === "dark" ? "text-cyan-400" : "text-cyan-600"}`}>My Expertise</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {[
                   { name: "React.js", level: 95, icon: faReact },
                   { name: "Flutter", level: 90, icon: faFlutter },
@@ -326,10 +317,10 @@ const About = () => {
             </Container>
 
             {/* Contact Buttons */}
-            <div className="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="300">
+            <div className="cta-buttons flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="300">
               <a
                 href="mailto:sohel@example.com"
-                className={`px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
+                className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
                   ? "bg-cyan-600 hover:bg-cyan-700 text-white shadow-lg"
                   : "bg-cyan-600 hover:bg-cyan-700 text-white shadow-lg"
                   }`}
@@ -341,7 +332,7 @@ const About = () => {
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
+                className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
                   ? "bg-slate-700 hover:bg-slate-600 text-white"
                   : "bg-slate-200 hover:bg-slate-300 text-slate-800"
                   }`}
@@ -352,7 +343,7 @@ const About = () => {
               <a
                 href="/resume.pdf"
                 download
-                className={`px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
+                className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                   : "bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white"
                   }`}

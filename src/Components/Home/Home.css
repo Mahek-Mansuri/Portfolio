@@ -10,7 +10,7 @@
     z-index: 1;
 }
 
-.DevPic1{
+.DevPic1 {
     background-image: url("../../Assets/image\ \(1\).png");
     min-height: 920px;
     background-position: center;
@@ -90,9 +90,14 @@
     color: cyan !important;
 }
 
-.Nav-link1:hover{
+.Nav-link1:hover {
     color: black !important;
 }
+
+.Nav-link1:focus {
+    color: rgb(16, 117, 117);
+}
+
 
 .Nav-link.active {
     color: #ffb86b;
@@ -157,6 +162,11 @@
 
 /* Collapse menu overlay on small screens for better contrast */
 @media (max-width: 767.98px) {
+    .DevPic1 {
+        min-height: 520px;
+
+    }
+
     .navbar-collapse {
         background: rgba(0, 0, 0, 0.6);
         position: absolute !important;
@@ -220,6 +230,6 @@
     }
 
     .hamburgr {
-        padding-left: 20.5rem !important;
+        padding-left: 8.5rem !important;
     }
 }

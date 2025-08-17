@@ -69,6 +69,7 @@
 @media (max-width: 768px) {
   .about-section {
     padding: 2rem 1rem;
+    width: 100%;
   }
 
   .profile-card {
@@ -665,11 +666,233 @@
   color: #1e293b;
 }
 
-/* Animations */
+/* About.css */
+/* ... existing styles ... */
+
+/* Mobile Responsiveness */
+@media (max-width: 1200px) {
+  .profile-card {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .profile-content h1 {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-text {
+    text-align: justify;
+  }
+}
+
+/* Tablet & Small Desktop */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    border-radius: 1rem;
+  }
+
+  .profile-image-section,
+  .profile-content {
+    width: 100% !important;
+    padding: 2rem;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-text {
+    text-align: justify;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 576px) and (orientation: landscape) {
+  .about-section {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .profile-image-section {
+    padding: 1.5rem;
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .social-links {
+    margin-top: 1rem;
+  }
+
+  .main-text {
+    text-align: justify;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 576px) {
+  .about-section {
+    padding: 1rem 0.5rem;
+    width: 100%;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .profile-card {
+    border-radius: 0.75rem;
+  }
+
+  .profile-image-section,
+  .profile-content {
+    padding: 1.5rem;
+  }
+
+  .profile-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .name-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .role-text {
+    font-size: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    gap: 0.75rem;
+  }
+
+  .profile-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-button {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    justify-content: center;
+  }
+
+  .card-header span {
+    font-size: 1rem;
+    text-align: left;
+
+  }
+
+  .main-text {
+    text-align: justify;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 400px) {
+  .about-section {
+    padding: 1rem 0.25rem;
+    width: 100%;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .profile-image-section,
+  .profile-content {
+    padding: 1rem;
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .name-title h2 {
+    font-size: 1.4rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .profile-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .card-header {
+    padding: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    text-align: center;
+
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    text-align: justify;
+
+  }
+
+  .main-text {
+    text-align: justify;
+  }
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Animation improvements */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 
   to {
@@ -678,26 +901,14 @@
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease forwards;
+[data-aos] {
+  transition-property: transform, opacity;
 }
 
-.delay-100 {
-  animation-delay: 0.1s;
-}
-
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-300 {
-  animation-delay: 0.3s;
-}
-
-.delay-400 {
-  animation-delay: 0.4s;
-}
-
-.delay-500 {
-  animation-delay: 0.5s;
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
