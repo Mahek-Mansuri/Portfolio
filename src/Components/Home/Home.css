@@ -4,7 +4,7 @@
     min-height: 996px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: relative;
     display: block;
     background-color: #00070d;
@@ -184,7 +184,7 @@ button:focus {
         min-width: 1;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         position: relative;
         display: block;
         z-index: 1;
@@ -245,6 +245,8 @@ button:focus {
 
 /* Desktop / tablet tweaks */
 @media (min-width: 768px) {
+   
+
     .navbar-collapse {
         background: transparent !important;
         position: static !important;
@@ -264,7 +266,26 @@ button:focus {
 /* small screens fallback */
 @media (max-width: 420px) {
     .DevPic {
-        min-height: 252px;
+        min-height: 339px !important;
+        background-color: #00070D;
+        min-width: 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        display: block;
+        z-index: 1;
+    }
+
+    .DevPic1 {
+        min-height: 400px !important;
+        background-color: #F8FAFC;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        display: block;
+        z-index: 1;
     }
 
     .linkedin-icon {
