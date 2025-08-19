@@ -691,7 +691,7 @@
     align-items: center;
     padding: 3rem 1rem;
     position: relative;
-    bottom: 1px;
+    margin-top: -1px;
     /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -747,7 +747,7 @@
     align-items: center;
     padding: 3rem 1rem;
     position: relative;
-    bottom: 1px;
+    margin-top: -1px;
     /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -819,7 +819,7 @@
     align-items: center;
     padding: 3rem 1rem;
     position: relative;
-    bottom: 1px;
+    margin-top: -1px;
     /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -880,7 +880,7 @@
     align-items: center;
     padding: 3rem 1rem;
     position: relative;
-    bottom: 1px;
+    margin-top: -1px;
     /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -977,7 +977,7 @@
     align-items: center;
     padding: 3rem 1rem;
     position: relative;
-    bottom: 1px;
+    margin-top: -1px;
     /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }

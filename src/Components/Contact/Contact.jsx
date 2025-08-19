@@ -1,6 +1,6 @@
 // ContactPage.jsx
 import React, { useRef, useEffect, useState, useContext } from "react";
-// import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { ThemeContext } from "../../Context/ThemeContext";
 import "./Contact.css";
 import TypeIt from "typeit-react";
@@ -16,21 +16,21 @@ function mergeRefs(...refs) {
 }
 
 function ContactPage() {
-  // const [runId, setRunId] = useState(0); // NOT used directly here but kept for compatibility
   const [showDesc, setShowDesc] = useState(false);
   const headingRef = useRef(null);
   const contactRef = useRef(null);
   const [restartKey, setRestartKey] = useState(0);
+  const formRef = useRef();
 
-  const mountedRef = useRef(false); // prevents observer firing immediately on mount
+  const mountedRef = useRef(false);
   const lastTriggeredAt = useRef(0);
 
   const { theme } = useContext(ThemeContext);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState(null); // null | "error" | "success"
+  const [status, setStatus] = useState(null); // null | "error" | "success" | "sending"
+  const [statusMessage, setStatusMessage] = useState("");
 
   useEffect(() => {
-    // allow a short window for initial paint to settle so observer won't immediately retrigger
     const t = setTimeout(() => {
       mountedRef.current = true;
     }, 300);
@@ -40,32 +40,81 @@ function ContactPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
+    
+    // Clear status when user starts typing again
+    if (status) {
+      setStatus(null);
+      setStatusMessage("");
+    }
   };
 
   const validate = () => {
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return false;
-    // very basic email check
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email)) return false;
+    if (!form.name.trim()) {
+      setStatusMessage("Please enter your name");
+      return false;
+    }
+    
+    if (!form.email.trim()) {
+      setStatusMessage("Please enter your email address");
+      return false;
+    }
+    
+    // More comprehensive email validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      setStatusMessage("Please enter a valid email address");
+      return false;
+    }
+    
+    if (!form.message.trim()) {
+      setStatusMessage("Please enter your message");
+      return false;
+    }
+    
+    if (form.message.trim().length < 10) {
+      setStatusMessage("Message should be at least 10 characters long");
+      return false;
+    }
+    
     return true;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (!validate()) {
       setStatus("error");
       return;
     }
-    // Simulate sending
-    setStatus("success");
-    console.log("Send contact payload:", form);
-    // Reset after a short delay
-    setTimeout(() => {
+    
+    // Set sending status
+    setStatus("sending");
+    setStatusMessage("Sending your message...");
+    
+    // Send email using EmailJS
+    emailjs.sendForm(
+      'service_p0ki3px', // Replace with your EmailJS service ID
+      'template_xi2ovj5', // Replace with your EmailJS template ID
+      formRef.current,
+      'P0P1NshsmwaRrooLI' // Replace with your EmailJS public key
+    )
+    .then((result) => {
+      console.log('Email successfully sent!', result.text);
+      setStatus("success");
+      setStatusMessage("Thanks! Your message has been sent successfully.");
       setForm({ name: "", email: "", message: "" });
-    }, 400);
+      
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setStatus(null);
+        setStatusMessage("");
+      }, 5000);
+    })
+    .catch((error) => {
+      console.error('Failed to send email:', error);
+      setStatus("error");
+      setStatusMessage("Sorry, there was a problem sending your message. Please try again later.");
+    });
   };
-
-  // const headingClass =
-  //   theme === "dark" ? "text-xl text-white font-semibold" : "text-xl text-white font-semibold";
 
   const descClass = theme === "dark" ? "mt-2 text-lg text-white" : "mt-2 text-lg text-white";
 
@@ -75,16 +124,13 @@ function ContactPage() {
 
     const COOLDOWN_MS = 800;
 
-    // central restart routine used by both the observer and the event listener
     const restartTyping = () => {
       const now = Date.now();
       if (now - lastTriggeredAt.current < COOLDOWN_MS) return;
       lastTriggeredAt.current = now;
 
-      // 1) unmount description immediately
       setShowDesc(false);
 
-      // 2) clear any previous hidden cursor markup/styling (defensive)
       try {
         const container = contactRef.current;
         if (container) {
@@ -95,7 +141,6 @@ function ContactPage() {
         /* ignore DOM access issues */
       }
 
-      // 3) Wait two frames so the description unmount is applied before remounting the heading.
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           setRestartKey((k) => k + 1);
@@ -103,14 +148,11 @@ function ContactPage() {
       });
     };
 
-    // IntersectionObserver: trigger restartTyping when section becomes visible
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          // don't act until initial mount grace period has passed (if you keep mountedRef logic)
           if (typeof mountedRef !== "undefined" && mountedRef.current === false) return;
-          // trigger safe restart
           restartTyping();
         });
       },
@@ -119,11 +161,9 @@ function ContactPage() {
 
     observer.observe(el);
 
-    // Also listen for a custom event (Home.jsx can dispatch window.dispatchEvent(new CustomEvent('contact:retype')))
     const onEvent = () => restartTyping();
     window.addEventListener("contact:retype", onEvent);
 
-    // cleanup
     return () => {
       try {
         observer.unobserve(el);
@@ -132,8 +172,7 @@ function ContactPage() {
       window.removeEventListener("contact:retype", onEvent);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // keep empty deps so observer + event listener install once
-
+  }, []);
 
   return (
     <div
@@ -148,7 +187,7 @@ function ContactPage() {
         <div className="p-8 flex flex-col items-center justify-center left-section">
           <section
             ref={mergeRefs(contactRef, headingRef)}
-            className="min-h-screen flex flex-col items-center justify-center px-4"
+            className="flex flex-col items-center justify-center px-4"
           >
             <div className="text-center">
               <h2
@@ -215,14 +254,17 @@ function ContactPage() {
               )}
             </div>
           </section>
-
         </div>
-
-        {/* right-section */}
 
         <div className="right-section w-full md:w-1/2" style={{ background: theme === "dark" ? "rgba(15, 23, 42, 0.7)" : "white" }}>
           <main className="card ">
-            <form className="form" style={{ color: theme === "dark" ? "white" : "black" }} onSubmit={handleSubmit} noValidate>
+            <form 
+              ref={formRef}
+              className="form" 
+              style={{ color: theme === "dark" ? "white" : "black" }} 
+              onSubmit={handleSubmit} 
+              noValidate
+            >
               <h2 className="form-head">Send a message</h2>
 
               <label className="field">
@@ -270,21 +312,32 @@ function ContactPage() {
               </label>
 
               <div className="actions">
-                <button type="submit" className="btn-primary">
-                  Send message
+                <button 
+                  type="submit" 
+                  className="btn-primary"
+                  disabled={status === "sending"}
+                >
+                  {status === "sending" ? "Sending..." : "Send message"}
                 </button>
                 <button
                   type="button"
                   className="btn-ghost"
-                  onClick={() => setForm({ name: "", email: "", message: "" })}
+                  onClick={() => {
+                    setForm({ name: "", email: "", message: "" });
+                    setStatus(null);
+                    setStatusMessage("");
+                  }}
                   style={{ background: theme === "dark" ? "#171e30" : "white", color: theme === "dark" ? "white" : "black" }}
                 >
                   Reset
                 </button>
               </div>
 
-              {status === "error" && <div className="status error">Please complete all fields with a valid email.</div>}
-              {status === "success" && <div className="status success">Thanks — your message has been sent!</div>}
+              {status && (
+                <div className={`status ${status}`}>
+                  {statusMessage}
+                </div>
+              )}
             </form>
           </main>
           <div
@@ -316,7 +369,8 @@ function ContactPage() {
                 style={{ textDecoration: "none", color: theme === "dark" ? "white" : "black" }}
               >
                 pinjari9222@gmail.com
-              </a>            </div>
+              </a>            
+            </div>
             <div className="info-item">
               <i className="bi bi-geo-alt-fill icon"></i>
               <span className="text">Surat , Gujarat , India</span>
@@ -335,17 +389,11 @@ function ContactPage() {
               </span>
             </div>
           </div>
-
-
-
         </div>
-
       </div>
 
-      {/* Footer */}
       <p
         className={`mt-12 text-sm footer ${theme === "dark" ? "text-slate-500" : "text-slate-400"}`}
-      // data-aos="fade-up"
       >
         © {new Date().getFullYear()} Sohel Pinjari. All rights reserved.
       </p>

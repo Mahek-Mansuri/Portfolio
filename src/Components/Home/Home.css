@@ -130,7 +130,15 @@
     margin-right: 0;
     background: transparent;
 
+
 }
+
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 
 /* Create a white 3-bar hamburger using pseudo elements */
 .navbar .custom-toggler .navbar-toggler-icon {
@@ -172,7 +180,7 @@
 
     .DevPic {
         min-height: 339px !important;
-        background-color:#00070D;
+        background-color: #00070D;
         min-width: 1;
         background-position: center;
         background-repeat: no-repeat;
@@ -184,13 +192,18 @@
 
     .DevPic1 {
         min-height: 400px !important;
-       
+        background-color: #F8FAFC;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         position: relative;
         display: block;
         z-index: 1;
+    }
+
+    button:focus {
+        outline: 2px solid blue !important;
+        /* or any style you prefer */
     }
 
     .navbar-collapse {
@@ -241,6 +254,11 @@
     .hamburgr {
         padding-left: 18.5rem !important;
     }
+
+    button:focus {
+        outline: none !important;
+
+    }
 }
 
 /* small screens fallback */
@@ -257,5 +275,10 @@
 
     .hamburgr {
         padding-left: 8.5rem !important;
+    }
+
+    button:focus {
+        outline: none !important;
+
     }
 }

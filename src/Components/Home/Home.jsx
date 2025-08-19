@@ -26,7 +26,7 @@ export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    
+
     <div className={`${theme === 'dark' ? "DevPic" : "DevPic1"}`}
     >
       <Navbar expand="md" variant="dark" className={`${theme === 'dark' ? "custom-navbar" : "custom-navbar1"}`} collapseOnSelect>
@@ -38,7 +38,7 @@ export default function Home() {
           <Navbar.Toggle aria-controls="main-navbar" className="custom-toggler" />
 
           {/* Collapsible nav */}
-          <Navbar.Collapse id="main-navbar" className="justify-content-end" style={{backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.6)"}}>
+          <Navbar.Collapse id="main-navbar" className="justify-content-end" style={{ backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.6)" }}>
             <Nav className="align-items-center">
               <Nav.Item className="Nav-items">
                 <Nav.Link onClick={() => scrollToSection('portfolio')} className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}>Portfolio</Nav.Link>
