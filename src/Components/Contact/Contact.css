@@ -194,20 +194,24 @@
 
 .contact-info {
   display: flex;
-  flex-wrap: wrap;      /* allows wrapping into 2 rows */
-  gap: 15px 30px;       /* spacing between items */
+  flex-wrap: wrap;
+  /* allows wrapping into 2 rows */
+  gap: 15px 30px;
+  /* spacing between items */
   margin-top: 30px;
   padding: 25px;
   border-radius: 12px;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.65);
-  justify-content: space-between; /* keeps spacing even */
+  justify-content: space-between;
+  /* keeps spacing even */
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  flex: 1 1 calc(50% - 30px); /* 2 items per row */
+  flex: 1 1 calc(50% - 30px);
+  /* 2 items per row */
   padding: 12px 15px;
   border-radius: 8px;
   cursor: pointer;
@@ -221,7 +225,8 @@
 
 .icon {
   font-size: 20px;
-  color: #0E7490; /* cyan */
+  color: #0E7490;
+  /* cyan */
   margin-right: 12px;
 }
 
@@ -246,6 +251,10 @@
   box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.08)
 }
 
+.contact-info {
+  margin-left: 0px;
+  padding-left: 60px;
+}
 
 /* Existing styles... */
 
@@ -261,6 +270,13 @@
   .right-section {
     width: 100% !important;
     padding: 2rem;
+  }
+
+
+  .left-section {
+    background-color: #0e7490;
+    width: 100%;
+    height: 450px;
   }
 
   .card {
@@ -282,9 +298,10 @@
     text-align: center;
   }
 
-  .contact-info{
+  .contact-info {
     margin-left: 0px;
-  } 
+    padding-left: 60px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -292,12 +309,14 @@
     width: 90%;
   }
 
-  .left-section {
-    padding: 3rem 2rem;
-  }
 
   .right-section {
     padding: 2rem;
+  }
+
+  .contact-info {
+    margin-left: 0px;
+    padding-left: 60px;
   }
 }
 
@@ -306,15 +325,28 @@
     padding: 1.5rem 0.5rem;
   }
 
-  
-    .contact-info {
-        margin-left: 23px;
-        width: 89%;
-    }
+  .info-item {
+    display: flex;
+    align-items: center;
+    flex: 1 1 calc(56% - 30px);
+    /* 2 items per row */
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
 
   .left-section,
   .right-section {
     padding: 1.5rem;
+  }
+
+  .left-section {
+    background-color: #0e7490;
+    width: 100%;
+    height: 450px;
+    padding: 4rem;
   }
 
   .card {
@@ -330,9 +362,15 @@
     font-size: 0.9rem;
   }
 
-  .footer{
+  .contact-info {
+    margin-left: 0px;
+    padding-left: 60px;
+  }
+
+  .footer {
     padding-bottom: 15px;
   }
+
 }
 
 /* ===== Desktop Optimization ===== */
@@ -342,12 +380,14 @@
     max-width: 1400px;
   }
 
-  .left-section {
-    padding: 4rem;
-  }
 
   .right-section {
     padding: 3rem;
+  }
+
+  .contact-info {
+    margin-left: 0px;
+    padding-left: 60px;
   }
 }
 
@@ -358,8 +398,14 @@
     height: auto;
   }
 
+
   .Contact-section {
     flex-direction: row;
     height: auto;
+  }
+
+  .contact-info {
+    margin-left: 0px;
+    padding-left: 60px;
   }
 }

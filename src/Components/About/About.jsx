@@ -42,7 +42,7 @@ const About = () => {
 
   return (
     <div
-      className="about-section min-h-screen flex flex-col items-center py-12 px-4 md:px-12 lg:px-24"
+      className="about-section flex flex-col items-center py-12 px-4 md:px-12 lg:px-24"
       style={{
         background: theme === "dark" ? "#111827" : "#f8fafc",
         color: theme === "dark" ? "#e2e8f0" : "#1e293b",

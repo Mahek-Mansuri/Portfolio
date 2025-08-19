@@ -1,21 +1,22 @@
 /* Hero background and overlay */
 .DevPic {
     background-image: url("../../Assets/dev-pic.png");
-    min-height: 920px;
+    min-height: 996px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: relative;
     display: block;
+    background-color: #00070d;
     z-index: 1;
 }
 
 .DevPic1 {
     background-image: url("../../Assets/image\ \(1\).png");
-    min-height: 920px;
+    min-height: 1015px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: relative;
     display: block;
     z-index: 1;
@@ -163,9 +164,33 @@
 
 /* Collapse menu overlay on small screens for better contrast */
 @media (max-width: 767.98px) {
-    .DevPic1 {
+    /* .DevPic1 {
         min-height: 520px;
 
+
+    } */
+
+    .DevPic {
+        min-height: 339px !important;
+        background-color:#00070D;
+        min-width: 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        display: block;
+        z-index: 1;
+    }
+
+    .DevPic1 {
+        min-height: 400px !important;
+       
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        display: block;
+        z-index: 1;
     }
 
     .navbar-collapse {
