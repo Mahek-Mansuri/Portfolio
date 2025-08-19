@@ -16,7 +16,7 @@ function mergeRefs(...refs) {
 }
 
 function ContactPage() {
-  const [runId, setRunId] = useState(0); // NOT used directly here but kept for compatibility
+  // const [runId, setRunId] = useState(0); // NOT used directly here but kept for compatibility
   const [showDesc, setShowDesc] = useState(false);
   const headingRef = useRef(null);
   const contactRef = useRef(null);
@@ -64,8 +64,8 @@ function ContactPage() {
     }, 400);
   };
 
-  const headingClass =
-    theme === "dark" ? "text-xl text-white font-semibold" : "text-xl text-white font-semibold";
+  // const headingClass =
+  //   theme === "dark" ? "text-xl text-white font-semibold" : "text-xl text-white font-semibold";
 
   const descClass = theme === "dark" ? "mt-2 text-lg text-white" : "mt-2 text-lg text-white";
 
@@ -218,6 +218,8 @@ function ContactPage() {
 
         </div>
 
+        {/* right-section */}
+
         <div className="right-section w-full md:w-1/2" style={{ background: theme === "dark" ? "rgba(15, 23, 42, 0.7)" : "white" }}>
           <main className="card ">
             <form className="form" style={{ color: theme === "dark" ? "white" : "black" }} onSubmit={handleSubmit} noValidate>
@@ -285,11 +287,68 @@ function ContactPage() {
               {status === "success" && <div className="status success">Thanks — your message has been sent!</div>}
             </form>
           </main>
+          <div
+            className="contact-info"
+            style={{
+              backgroundColor: theme === "dark" ? "#171F30" : "white",
+              color: theme === "dark" ? "white" : "black"
+            }}
+          >
+            <div className="info-item">
+              <i className="bi bi-telephone-fill icon" aria-hidden="true"></i>
+              <a
+                href="tel:+916353903438"
+                className="text phone-link"
+                aria-label="Call +91 63539 03438"
+                title="Call +91 63539 03438"
+                style={{ textDecoration: "none", color: theme === "dark" ? "white" : "black" }}
+              >
+                +91 63539 03438
+              </a>
+            </div>
+            <div className="info-item">
+              <i className="bi bi-envelope-fill icon"></i>
+              <a
+                href="mailto:pinjari9222@gmail.com"
+                className="text email-link"
+                aria-label="Email pinjari9222@gmail.com"
+                title="Email pinjari9222@gmail.com"
+                style={{ textDecoration: "none", color: theme === "dark" ? "white" : "black" }}
+              >
+                pinjari9222@gmail.com
+              </a>            </div>
+            <div className="info-item">
+              <i className="bi bi-geo-alt-fill icon"></i>
+              <span className="text">Surat , Gujarat , India</span>
+            </div>
+            <div className="info-item">
+              <i className="bi bi-whatsapp icon"></i>
+              <span className="text">
+                <a
+                  href="https://wa.me/8866449228"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", color: theme === "dark" ? "white" : "black" }}
+                >
+                  Chat on WhatsApp
+                </a>
+              </span>
+            </div>
+          </div>
+
+
+
         </div>
 
       </div>
-      <footer className="attribution">Inspired by Vertex — converted to contact page</footer>
 
+      {/* Footer */}
+      <p
+        className={`mt-12 text-sm footer ${theme === "dark" ? "text-slate-500" : "text-slate-400"}`}
+      // data-aos="fade-up"
+      >
+        © {new Date().getFullYear()} Sohel Pinjari. All rights reserved.
+      </p>
     </div>
   );
 }

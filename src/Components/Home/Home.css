@@ -124,10 +124,11 @@
 
 /* Toggler (hamburger) customization - white 3-bar icon */
 .navbar .custom-toggler {
-    border: 0;
+    border: 2px solid #22D3EE;
     padding: 6px;
     margin-right: 0;
     background: transparent;
+
 }
 
 /* Create a white 3-bar hamburger using pseudo elements */
@@ -135,7 +136,7 @@
     display: inline-block;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: #22D3EE;
     position: relative;
     transition: transform 0.2s ease;
 }
@@ -147,7 +148,7 @@
     left: 0;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: #22D3EE;
 }
 
 .navbar .custom-toggler .navbar-toggler-icon::before {

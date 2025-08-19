@@ -869,9 +869,11 @@
   }
 
   .card-text {
-    font-size: 0.9rem;
-    text-align: justify;
-
+   font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word !important;
+  hyphens: auto;
   }
 
   .main-text {

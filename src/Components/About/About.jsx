@@ -20,10 +20,23 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faLaptopCode, faEnvelope, faDownload } from "@fortawesome/free-solid-svg-icons";
 
+
 const About = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+
+    if (id === 'contact') {
+      // tiny timeout so scroll has started and to reduce race with IntersectionObserver
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('contact:retype'));
+      }, 40);
+    }
+  };
 
   const { theme } = useContext(ThemeContext);
 
@@ -149,7 +162,7 @@ const About = () => {
             {/* Social Links */}
             <div className="flex mt-6 space-x-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/sohel-pinjari"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-3 rounded-full transition-all duration-300 ${theme === "dark"
@@ -161,7 +174,7 @@ const About = () => {
                 <FontAwesomeIcon icon={faGithub} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/SohilPinjari"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-3 rounded-full transition-all duration-300 ${theme === "dark"
@@ -173,7 +186,7 @@ const About = () => {
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
               <a
-                href="mailto:sohel@example.com"
+                href="mailto:pinjari9222@gmail.com"
                 className={`p-3 rounded-full transition-all duration-300 ${theme === "dark"
                   ? "bg-slate-800 hover:bg-slate-700 text-cyan-300"
                   : "bg-slate-100 hover:bg-slate-200 text-cyan-700"
@@ -238,7 +251,7 @@ const About = () => {
                           width: `${skill.level}%`,
                           background: theme === "dark"
                             ? "linear-gradient(90deg, #0ea5e9, #38bdf8)"
-                            :  "linear-gradient(90deg, #0e7490, #155e75)"
+                            : "linear-gradient(90deg, #0e7490, #155e75)"
                         }}
                       ></div>
                     </div>
@@ -299,7 +312,7 @@ const About = () => {
                         }`}
                     >
                       <div className="flex items-center">
-                        <FontAwesomeIcon icon={faLaptopCode} className={`text-xl mr-3 ${theme === 'dark' ? "text-cyan-400" : "text-cyan-600"}`}/>
+                        <FontAwesomeIcon icon={faLaptopCode} className={`text-xl mr-3 ${theme === 'dark' ? "text-cyan-400" : "text-cyan-600"}`} />
                         <span className={`font-bold  ${theme === 'dark' ? "text-cyan-400" : "text-cyan-600"}`}>Web Development</span>
                       </div>
                     </Card.Header>
@@ -319,7 +332,7 @@ const About = () => {
             {/* Contact Buttons */}
             <div className="cta-buttons flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="300">
               <a
-                href="mailto:sohel@example.com"
+                onClick={() => scrollToSection('contact')}
                 className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
                   ? "bg-cyan-600 hover:bg-cyan-700 text-white shadow-lg"
                   : "bg-cyan-600 hover:bg-cyan-700 text-white shadow-lg"
@@ -329,7 +342,7 @@ const About = () => {
                 Contact Me
               </a>
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/sohel-pinjari"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
@@ -340,8 +353,8 @@ const About = () => {
                 <FontAwesomeIcon icon={faGithub} className="mr-2" />
                 GitHub
               </a>
-              <a
-                href="/resume.pdf"
+              {/* <a
+                href="../../Assets/Resume.pdf"
                 download
                 className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
@@ -350,19 +363,19 @@ const About = () => {
               >
                 <FontAwesomeIcon icon={faDownload} className="mr-2" />
                 Download CV
+              </a> */}
+              <a href="/Resume.pdf" download="Sohel_Pinjari_CV.pdf" target="_blank" rel="noopener noreferrer" className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                  : "bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white"
+                  }`}>
+                <FontAwesomeIcon icon={faDownload} className="mr-2" />
+                Download CV
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <p
-        className={`mt-12 text-sm ${theme === "dark" ? "text-slate-500" : "text-slate-400"}`}
-        data-aos="fade-up"
-      >
-        © {new Date().getFullYear()} Sohel Pinjari. All rights reserved.
-      </p>
     </div>
   );
 };
