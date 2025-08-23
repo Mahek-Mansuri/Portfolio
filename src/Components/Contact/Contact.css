@@ -209,23 +209,27 @@
 .contact-info {
   display: flex;
   flex-wrap: wrap;
-  /* allows wrapping into 2 rows */
   gap: 15px 30px;
-  /* spacing between items */
   margin-top: 30px;
   padding: 25px;
   border-radius: 12px;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.65);
-  justify-content: space-between;
-  /* keeps spacing even */
+
+  justify-content: center;
+  /* center horizontally */
+  align-items: center;
+  /* center vertically */
+  text-align: center;
+  /* text also centered */
 }
 
 .info-item {
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* center icon + text */
   flex: 1 1 calc(50% - 30px);
-  /* 2 items per row */
   padding: 12px 15px;
   border-radius: 8px;
   cursor: pointer;
@@ -241,7 +245,7 @@
   font-size: 20px;
   color: #0E7490;
   /* cyan */
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
 .text {
@@ -267,7 +271,7 @@
 
 .contact-info {
   margin-left: 0px;
-  padding-left: 60px;
+  /* padding-left: 60px; */
 }
 
 /* Existing styles... */
@@ -313,8 +317,17 @@
   }
 
   .contact-info {
-    margin-left: 0px;
-    padding-left: 60px;
+    flex-direction: column;
+    /* stack all items */
+    gap: 20px;
+    /* more spacing */
+  }
+
+  .info-item {
+    flex: 1 1 100%;
+    /* full width per row */
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -328,9 +341,19 @@
     padding: 2rem;
   }
 
+
   .contact-info {
-    margin-left: 0px;
-    padding-left: 60px;
+    flex-direction: column;
+    /* stack all items */
+    gap: 20px;
+    /* more spacing */
+  }
+
+  .info-item {
+    flex: 1 1 100%;
+    /* full width per row */
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -376,9 +399,19 @@
     font-size: 0.9rem;
   }
 
+
   .contact-info {
-    margin-left: 0px;
-    padding-left: 60px;
+    flex-direction: column;
+    /* stack all items */
+    gap: 20px;
+    /* more spacing */
+  }
+
+  .info-item {
+    flex: 1 1 100%;
+    /* full width per row */
+    justify-content: center;
+    text-align: center;
   }
 
   .footer {
@@ -399,10 +432,8 @@
     padding: 3rem;
   }
 
-  .contact-info {
-    margin-left: 0px;
-    padding-left: 60px;
-  }
+
+ 
 }
 
 /* ===== Orientation Handling ===== */
@@ -418,8 +449,5 @@
     height: auto;
   }
 
-  .contact-info {
-    margin-left: 0px;
-    padding-left: 60px;
-  }
+
 }

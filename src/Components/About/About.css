@@ -312,24 +312,18 @@
 }
 
 /* Cards Section */
-.cards-container {
-  margin: 2.5rem 0;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.expertise-card {
+/* Default Card Styling */
+.expertise-card,
+.card {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
-.expertise-card:hover {
+.expertise-card:hover,
+.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -338,31 +332,34 @@
   padding: 1.2rem 1.5rem;
   display: flex;
   align-items: center;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.card-icon {
-  font-size: 1.6rem;
-  margin-right: 0.8rem;
-}
+
 
 .card-title {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.card-body {
-  padding: 1.5rem;
-}
-
-.card-subtitle {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
 
 .card-text {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
+  font-weight: 400;
+}
+
+/* 🌙 Dark Theme Fix */
+.dark .card-title,
+.dark .card-text {
+  color: #fff !important;
+}
+
+/* ☀️ Light Theme Fix */
+.light .card-title,
+.light .card-text {
+  color: #111827 !important; /* stronger contrast */
 }
 
 /* Buttons */
@@ -696,22 +693,16 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .card-body {
-    padding: 5px 20px;
-  }
+  
 
+    .card-header {
+    font-size: 15px;
+  }
   .card-title {
-    text-align: center;
-    font-weight: 700;
-    font-size: 18px;
+    font-size: 1rem;
   }
-
   .card-text {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-    text-justify: inter-word !important;
-    hyphens: auto;
+    font-size: 13px;
   }
 
   .profile-content h1 {
@@ -752,9 +743,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .card-body {
-    padding: 5px 20px;
-  }
+  
 
   .card-title {
     text-align: center;
@@ -824,22 +813,22 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .card-body {
-    padding: 5px 20px;
-  }
+  
 
+  .cards-grid {
+    grid-template-columns: 1fr; /* stack in single column */
+  }
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
   .card-title {
-    text-align: center;
-    font-weight: 700;
-    font-size: 18px;
+    font-size: 0.95rem;
   }
-
   .card-text {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-    text-justify: inter-word !important;
-    hyphens: auto;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .profile-image-section {
@@ -885,9 +874,6 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .card-body {
-    padding: 5px 20px;
-  }
 
   .card-title {
     text-align: center;
@@ -982,10 +968,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .card-body {
-    padding: 5px 20px;
-  }
-
+  
   .section-header h2 {
     font-size: 1.8rem;
   }

@@ -16,6 +16,8 @@ import {
   faJsSquare,
   faReact,
   faGithub,
+  faTelegram,
+  faUpwork,
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import { faLaptopCode, faEnvelope, faDownload } from "@fortawesome/free-solid-svg-icons";
@@ -162,16 +164,16 @@ const About = () => {
             {/* Social Links */}
             <div className="flex mt-6 space-x-4">
               <a
-                href="https://github.com/sohel-pinjari"
+                href="https://t.me/+918866449228"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-3 rounded-full transition-all duration-300 ${theme === "dark"
                   ? "bg-slate-800 hover:bg-slate-700 text-cyan-300"
                   : "bg-slate-100 hover:bg-slate-200 text-cyan-700"
                   }`}
-                aria-label="GitHub"
+                 aria-label="Telegram"
               >
-                <FontAwesomeIcon icon={faGithub} />
+                <FontAwesomeIcon icon={faTelegram} />
               </a>
               <a
                 href="https://linkedin.com/in/SohilPinjari"
@@ -186,14 +188,14 @@ const About = () => {
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
               <a
-                href="mailto:pinjari9222@gmail.com"
+                href="https://www.upwork.com/freelancers/~01793fc549cb7f3194" 
                 className={`p-3 rounded-full transition-all duration-300 ${theme === "dark"
                   ? "bg-slate-800 hover:bg-slate-700 text-cyan-300"
                   : "bg-slate-100 hover:bg-slate-200 text-cyan-700"
                   }`}
-                aria-label="Email"
+                  aria-label="Upwork"
               >
-                <FontAwesomeIcon icon={faEnvelope} />
+                <FontAwesomeIcon icon={faUpwork} />
               </a>
             </div>
           </div>
@@ -364,13 +366,19 @@ const About = () => {
                 <FontAwesomeIcon icon={faDownload} className="mr-2" />
                 Download CV
               </a> */}
-              <a href="/Resume.pdf" download="Sohel_Pinjari_CV.pdf" target="_blank" rel="noopener noreferrer" className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                  : "bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white"
-                  }`}>
+              <a
+                href={`${process.env.PUBLIC_URL}/Resume.pdf`}
+                download="Sohel_Pinjari_CV.pdf"
+                rel="noopener noreferrer"
+                className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                    : "bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white"
+                  }`}
+              >
                 <FontAwesomeIcon icon={faDownload} className="mr-2" />
                 Download CV
               </a>
+
             </div>
           </div>
         </div>
