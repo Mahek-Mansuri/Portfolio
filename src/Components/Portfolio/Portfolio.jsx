@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { ThemeContext } from "../../Context/ThemeContext";
 import './Portfolio.css'
-import { useNavigate } from "react-router-dom"; // Add this import
-// Replace these with your actual image paths
+import { useNavigate } from "react-router-dom";
 import img1 from "../../Assets/portfolio1.jpg";
 import img2 from "../../Assets/portfolio-2.jpg";
 import img3 from "../../Assets/portfolio-3.jpg";
@@ -62,21 +61,17 @@ const cards = [
 export default function Portfolio() {
   const { theme } = useContext(ThemeContext);
   const [activeFilter, setActiveFilter] = useState("all");
-  const navigate = useNavigate(); // Initialize navigate function
+   const navigate = useNavigate(); 
   
-  // Filter portfolio items
   const filteredCards = activeFilter === "all" 
     ? cards 
     : cards.filter(card => card.category === activeFilter);
   
-  // Get unique categories
   const categories = [...new Set(cards.map(card => card.category))];
 
-  // Function to handle project click
   const handleProjectClick = (projectId) => {
-    navigate(`/project/${projectId}`); // Navigate to project detail page
+    navigate(`/project/${projectId}`);
   };
-
 
   return (
     <section className={`portfolio-section ${theme}-theme`}>
@@ -88,7 +83,6 @@ export default function Portfolio() {
         </p>
       </div>
       
-      {/* Filter buttons */}
       <div className="portfolio-filters">
         <button 
           className={`filter-btn ${activeFilter === "all" ? "active" : ""}`}
@@ -107,7 +101,7 @@ export default function Portfolio() {
         ))}
       </div>
       
-        <Container style={{maxWidth: '1675px'}}>
+      <Container style={{maxWidth: '1675px'}}>
         <Row className="portfolio-grid">
           {filteredCards.map((c) => (
             <Col key={c.id} xs={12} md={6} lg={4} className="portfolio-item">
@@ -124,7 +118,7 @@ export default function Portfolio() {
                     <Card.Title className={`card-titleP ${theme === "dark" ? "black" : "white"}`}>{c.title}</Card.Title>
                     <button 
                       className="view-project-btn"
-                      onClick={() => handleProjectClick(c.id)} // Add click handler
+                      onClick={() => handleProjectClick(c.id)}
                     >
                       View Project
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
