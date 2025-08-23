@@ -227,7 +227,7 @@
 .info-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   /* center icon + text */
   flex: 1 1 calc(50% - 30px);
   padding: 12px 15px;
@@ -318,6 +318,7 @@
 
   .contact-info {
     flex-direction: column;
+    align-items: start;
     /* stack all items */
     gap: 20px;
     /* more spacing */
@@ -344,6 +345,8 @@
 
   .contact-info {
     flex-direction: column;
+        align-items: start;
+
     /* stack all items */
     gap: 20px;
     /* more spacing */
@@ -402,6 +405,8 @@
 
   .contact-info {
     flex-direction: column;
+        align-items: start;
+
     /* stack all items */
     gap: 20px;
     /* more spacing */
