@@ -23,7 +23,7 @@ export default function PortfolioDetail() {
   }
 
   return (
-    <div className="portfolio-detail-container" style={{ backgroundColor: theme === "dark" ? "#111827" : "white", color: theme === "dark" ? "white" : "black", padding: '35px' }}>
+    <div className="portfolio-detail-container" style={{ backgroundColor: theme === "dark" ? "#111827" : "white", color: theme === "dark" ? "white" : "black", padding: '10px' }}>
       <button onClick={goBack} className="back-button" >
         &larr; Back to Portfolio
       </button>

@@ -9,6 +9,8 @@ import cctvMian from "../../Assets/CCTV/CCTV-MAIN.jpg"
 import telvasMain from "../../Assets/telvas-library/telvasMain.jpg"
 import vsMain from "../../Assets/vs-capital/vsMain.jpg"
 import team from "../../Assets/team-24/team.jpg"
+import zupzap from "../../Assets/Zup-zap/zupzap.jpg"
+
 
 
 
@@ -19,7 +21,7 @@ const cards = [
     subtitle: "Design, Development",
     img: hadafMain,
     alt: "App Landing",
-    category:  "web development"
+    category: "web development"
   },
   {
     id: 2,
@@ -32,7 +34,7 @@ const cards = [
   {
     id: 3,
     title: "Telvas Library",
-    subtitle: "Marketing, Analytics",
+    subtitle: "Design, Development",
     img: telvasMain,
     alt: "Marketing Dashboard",
     category: "web development"
@@ -40,7 +42,7 @@ const cards = [
   {
     id: 4,
     title: "VS Capital",
-    subtitle: "UI/UX, Development",
+    subtitle: "Design, Development",
     img: vsMain,
     alt: "E-commerce Platform",
     category: "web development"
@@ -48,16 +50,16 @@ const cards = [
   {
     id: 5,
     title: "Team 24",
-    subtitle: "Branding, Design",
+    subtitle: "Design, Development",
     img: team,
     alt: "Brand Identity",
     category: "web development"
   },
   {
     id: 6,
-    title: "Social Campaign",
-    subtitle: "Marketing, Strategy",
-    img: img3,
+    title: "ZupZap",
+    subtitle: "Design, Development",
+    img: zupzap,
     alt: "Social Media Campaign",
     category: "app development"
   },
@@ -66,12 +68,12 @@ const cards = [
 export default function Portfolio() {
   const { theme } = useContext(ThemeContext);
   const [activeFilter, setActiveFilter] = useState("all");
-   const navigate = useNavigate(); 
-  
-  const filteredCards = activeFilter === "all" 
-    ? cards 
+  const navigate = useNavigate();
+
+  const filteredCards = activeFilter === "all"
+    ? cards
     : cards.filter(card => card.category === activeFilter);
-  
+
   const categories = [...new Set(cards.map(card => card.category))];
 
   const handleProjectClick = (projectId) => {
@@ -87,16 +89,16 @@ export default function Portfolio() {
           Explore my latest projects showcasing my expertise in design, development, and marketing.
         </p>
       </div>
-      
+
       <div className="portfolio-filters">
-        <button 
+        <button
           className={`filter-btn ${activeFilter === "all" ? "active" : ""}`}
           onClick={() => setActiveFilter("all")}
         >
           All Projects
         </button>
         {categories.map(category => (
-          <button 
+          <button
             key={category}
             className={`filter-btn ${activeFilter === category ? "active" : ""}`}
             onClick={() => setActiveFilter(category)}
@@ -105,8 +107,8 @@ export default function Portfolio() {
           </button>
         ))}
       </div>
-      
-      <Container style={{maxWidth: '1675px'}}>
+
+      <Container style={{ maxWidth: '1675px' }}>
         <Row className="portfolio-grid">
           {filteredCards.map((c) => (
             <Col key={c.id} xs={12} md={6} lg={4} className="portfolio-item">
@@ -121,14 +123,14 @@ export default function Portfolio() {
                   <Card.Body className="card-bodyP">
                     <small className="card-subtitleP">{c.subtitle}</small>
                     <Card.Title className={`card-titleP ${theme === "dark" ? "black" : "white"}`}>{c.title}</Card.Title>
-                    <button 
+                    <button
                       className="view-project-btn"
                       onClick={() => handleProjectClick(c.id)}
                     >
                       View Project
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.33301 8H12.6663" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M3.33301 8H12.6663" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </button>
                   </Card.Body>
