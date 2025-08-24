@@ -3,50 +3,55 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { ThemeContext } from "../../Context/ThemeContext";
 import './Portfolio.css'
 import { useNavigate } from "react-router-dom";
-import img1 from "../../Assets/portfolio1.jpg";
-import img2 from "../../Assets/portfolio-2.jpg";
 import img3 from "../../Assets/portfolio-3.jpg";
+import hadafMain from "../../Assets/Hadaf/hadaf-main.jpg"
+import cctvMian from "../../Assets/CCTV/CCTV-MAIN.jpg"
+import telvasMain from "../../Assets/telvas-library/telvasMain.jpg"
+import vsMain from "../../Assets/vs-capital/vsMain.jpg"
+import team from "../../Assets/team-24/team.jpg"
+
+
 
 const cards = [
   {
     id: 1,
-    title: "App Landing Design",
-    subtitle: "Branding, UI/UX",
-    img: img1,
+    title: "Hadaf Green Energy",
+    subtitle: "Design, Development",
+    img: hadafMain,
     alt: "App Landing",
-    category: "design"
+    category:  "web development"
   },
   {
     id: 2,
-    title: "Medical Platform",
+    title: "Xconnect",
     subtitle: "Design, Development",
-    img: img2,
+    img: cctvMian,
     alt: "Medical Concept",
-    category: "development"
+    category: "web development"
   },
   {
     id: 3,
-    title: "Marketing Analytics",
+    title: "Telvas Library",
     subtitle: "Marketing, Analytics",
-    img: img3,
+    img: telvasMain,
     alt: "Marketing Dashboard",
-    category: "marketing"
+    category: "web development"
   },
   {
     id: 4,
-    title: "E-commerce Solution",
+    title: "VS Capital",
     subtitle: "UI/UX, Development",
-    img: img1,
+    img: vsMain,
     alt: "E-commerce Platform",
-    category: "development"
+    category: "web development"
   },
   {
     id: 5,
-    title: "Brand Identity",
+    title: "Team 24",
     subtitle: "Branding, Design",
-    img: img2,
+    img: team,
     alt: "Brand Identity",
-    category: "design"
+    category: "web development"
   },
   {
     id: 6,
@@ -54,7 +59,7 @@ const cards = [
     subtitle: "Marketing, Strategy",
     img: img3,
     alt: "Social Media Campaign",
-    category: "marketing"
+    category: "app development"
   },
 ];
 

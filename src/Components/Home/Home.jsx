@@ -6,6 +6,8 @@ import Container from 'react-bootstrap/Container';
 import { Sun, Moon } from 'lucide-react';
 import { ThemeContext } from '../../Context/ThemeContext';
 import { useNavigate } from 'react-router-dom'; // Add this import
+import navLogo from '../../Assets/nav-logo.png'
+import navLogo1 from '../../Assets/nav-logo1.png'
 
 export default function Home() {
   const navigate = useNavigate(); // Initialize navigate
@@ -44,14 +46,17 @@ export default function Home() {
         collapseOnSelect 
         expanded={expanded}
       >
-        <Container fluid="lg" className="px-4 hamburgr">
-          <Navbar.Brand 
+
+        <Navbar.Brand 
             href="#"
             onClick={() => navigate('/')} // Navigate to home when brand is clicked
-            className="visually-hidden"
+            className='logo-sohel'
           >
-            Sohel Pinjari
+            <img src={theme === "dark" ? navLogo : navLogo1}  alt='logo'/>
+           
           </Navbar.Brand>
+        <Container fluid="lg" className="px-4 hamburgr">
+          
 
           <Navbar.Toggle 
             aria-controls="main-navbar" 

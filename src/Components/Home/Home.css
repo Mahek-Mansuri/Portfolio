@@ -48,11 +48,17 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding-top: 18px;
+    /* padding-top: 18px; */
     padding-bottom: 0;
-    padding-left: 185px;
+    /* padding-left: 185px; */
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(6px);
+
+}
+
+.logo-sohel {
+    height: 55px;
+    width: 135px;
 }
 
 /* navbar-white */
@@ -63,9 +69,9 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding-top: 18px;
+    /* padding-top: 18px; */
     padding-bottom: 0;
-    padding-left: 185px;
+    /* padding-left: 185px; */
     background: rgba(253, 251, 251, 0.6);
     backdrop-filter: blur(6px);
 }
@@ -245,7 +251,7 @@ button:focus {
 
 /* Desktop / tablet tweaks */
 @media (min-width: 768px) {
-   
+
 
     .navbar-collapse {
         background: transparent !important;
@@ -294,8 +300,22 @@ button:focus {
         border-radius: 5px;
     }
 
+    .custom-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        /* padding-top: 18px; */
+        padding-bottom: 0;
+        /* padding-left: 185px; */
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        justify-content: space-between;
+    }
+
     .hamburgr {
-        padding-left: 8.5rem !important;
+        display: contents !important;
     }
 
     button:focus {
