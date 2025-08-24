@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.287e16ef.css",
-    "main.js": "/Portfolio/static/js/main.36c4846d.js",
+    "main.css": "/Portfolio/static/css/main.eaf84ce7.css",
+    "main.js": "/Portfolio/static/js/main.a29d6d66.js",
     "static/js/453.052877a7.chunk.js": "/Portfolio/static/js/453.052877a7.chunk.js",
     "static/media/Profile-pic6.PNG": "/Portfolio/static/media/Profile-pic6.8ccda9e3da91906fc5f6.PNG",
     "static/media/portfolio-3.jpg": "/Portfolio/static/media/portfolio-3.ce6c98bb670922c1ff5e.jpg",
@@ -20,30 +20,33 @@
     "static/media/hadaf-main2.jpg": "/Portfolio/static/media/hadaf-main2.2280879361b2f9753e13.jpg",
     "static/media/hadaf-main6.jpg": "/Portfolio/static/media/hadaf-main6.d8047a4668b2fe2f6b01.jpg",
     "static/media/vsMain1.jpg": "/Portfolio/static/media/vsMain1.6688a56ec6a4ce71d3cf.jpg",
-    "static/media/vsMain2.jpg": "/Portfolio/static/media/vsMain2.ebae413b93380e704f23.jpg",
     "static/media/telvasMain.jpg": "/Portfolio/static/media/telvasMain.6bcc496ca09abd2ad107.jpg",
     "static/media/cctv1.jpg": "/Portfolio/static/media/cctv1.bbc29265a31b1a275af3.jpg",
+    "static/media/vsMain2.jpg": "/Portfolio/static/media/vsMain2.c8fcfa62e1bdeff0444e.jpg",
     "static/media/team1.jpg": "/Portfolio/static/media/team1.271e637ef42d4ab694c2.jpg",
     "static/media/hadaf-main1.jpg": "/Portfolio/static/media/hadaf-main1.e2c77077c2cb3ce9bda2.jpg",
     "static/media/hadaf-main3.jpg": "/Portfolio/static/media/hadaf-main3.6838fab6d2890a90b09b.jpg",
     "static/media/vsMain.jpg": "/Portfolio/static/media/vsMain.de0da8ef2a1462e2b904.jpg",
     "static/media/team3.jpg": "/Portfolio/static/media/team3.a4db4ba8e7a76508f71a.jpg",
-    "static/media/team6.jpg": "/Portfolio/static/media/team6.c895f7b24ca8cffe3c18.jpg",
     "static/media/cctv2.jpg": "/Portfolio/static/media/cctv2.88d7de7022d056c72894.jpg",
+    "static/media/zupzap2.jpg": "/Portfolio/static/media/zupzap2.05771209d686d936d53d.jpg",
     "static/media/team2.jpg": "/Portfolio/static/media/team2.291f66056d3f9e464cdb.jpg",
-    "static/media/cctv3.jpg": "/Portfolio/static/media/cctv3.74505361505a0384fa7d.jpg",
-    "static/media/cctv4.jpg": "/Portfolio/static/media/cctv4.6164514ceb55176df311.jpg",
+    "static/media/team6.jpg": "/Portfolio/static/media/team6.f612ce42618a29ff296e.jpg",
     "static/media/hadaf-main4.jpg": "/Portfolio/static/media/hadaf-main4.3005aef0cbd8228b5ced.jpg",
+    "static/media/cctv3.jpg": "/Portfolio/static/media/cctv3.cd3a7dcd3025a131626b.jpg",
+    "static/media/cctv4.jpg": "/Portfolio/static/media/cctv4.6d7f9ac32eef822e4f0d.jpg",
     "static/media/telvasMain2.jpg": "/Portfolio/static/media/telvasMain2.3e02ff8e282100826a93.jpg",
-    "static/media/team4.jpg": "/Portfolio/static/media/team4.67db126db24bf1d26b0d.jpg",
     "static/media/hadaf-main7.jpg": "/Portfolio/static/media/hadaf-main7.8cf953ecfa08f8c631ef.jpg",
+    "static/media/zupzap1.jpg": "/Portfolio/static/media/zupzap1.87bcd871e515de60b987.jpg",
+    "static/media/team4.jpg": "/Portfolio/static/media/team4.af51fc057a24bef85875.jpg",
+    "static/media/zupzap.jpg": "/Portfolio/static/media/zupzap.3b2adc7dd41b190b2240.jpg",
     "index.html": "/Portfolio/index.html",
-    "main.287e16ef.css.map": "/Portfolio/static/css/main.287e16ef.css.map",
-    "main.36c4846d.js.map": "/Portfolio/static/js/main.36c4846d.js.map",
+    "main.eaf84ce7.css.map": "/Portfolio/static/css/main.eaf84ce7.css.map",
+    "main.a29d6d66.js.map": "/Portfolio/static/js/main.a29d6d66.js.map",
     "453.052877a7.chunk.js.map": "/Portfolio/static/js/453.052877a7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.287e16ef.css",
-    "static/js/main.36c4846d.js"
+    "static/css/main.eaf84ce7.css",
+    "static/js/main.a29d6d66.js"
   ]
 }
