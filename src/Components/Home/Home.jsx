@@ -70,6 +70,14 @@ export default function Home() {
             style={{ backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.6)" }}
           >
             <Nav className="align-items-center">
+               <Nav.Item className="Nav-items">
+                <Nav.Link 
+                  onClick={() => scrollToSection('home')} 
+                  className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}
+                >
+                  Home
+                </Nav.Link>
+              </Nav.Item>
               <Nav.Item className="Nav-items">
                 <Nav.Link 
                   onClick={() => scrollToSection('portfolio')} 

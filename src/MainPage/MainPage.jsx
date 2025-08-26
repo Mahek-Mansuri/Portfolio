@@ -8,7 +8,7 @@ import Portfolio from '../Components/Portfolio/Portfolio'
 function MainPage() {
   return (
     <>
-      <Home />
+      <section id="home"> <Home /></section>
       <section id="about"><About /></section>
       <section id="portfolio"><Portfolio /></section>
       <section id="contact"><ContactPage /></section>

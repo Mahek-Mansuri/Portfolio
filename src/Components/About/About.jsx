@@ -218,7 +218,7 @@ const About = () => {
               data-aos="fade-right"
               data-aos-delay="100"
             >
-              I'm a passionate <span className={`font-semibold ${theme === "dark" ? "text-cyan-300" : "text-cyan-600"}`}>Web & App Developer</span> with 5+ years of experience creating modern, high-performance applications. I specialize in building responsive interfaces with React and Flutter, crafting products that are not just functional, but provide exceptional user experiences.
+              I'm a passionate <span className={`font-semibold ${theme === "dark" ? "text-cyan-300" : "text-cyan-600"}`}>Web & App Developer</span> with 3+ years of experience creating modern, high-performance applications. I specialize in building responsive interfaces with React and Flutter, crafting products that are not just functional, but provide exceptional user experiences.
             </p>
 
             {/* Skills Section */}
@@ -333,7 +333,7 @@ const About = () => {
 
             {/* Contact Buttons */}
             <div className="cta-buttons flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="300">
-              <a
+              <button
                 onClick={() => scrollToSection('contact')}
                 className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
                   ? "bg-cyan-600 hover:bg-cyan-700 text-white shadow-lg"
@@ -342,7 +342,7 @@ const About = () => {
               >
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                 Contact Me
-              </a>
+              </button>
               <a
                 href="https://github.com/sohel-pinjari"
                 target="_blank"
