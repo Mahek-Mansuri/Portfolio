@@ -60,21 +60,12 @@ import A3 from "../../Assets/A one zone footwear/A3.jpg"
 import A4 from "../../Assets/A one zone footwear/A4.jpg"
 import A5 from "../../Assets/A one zone footwear/A5.jpg"
 
-
-
-
-
-
-
-
-
-
 export const cards = [
   {
     id: 1,
     title: "Hadaf Green Energy",
     subtitle: "Design, Development",
-    images: [hadafMain, hadafMain1, hadafMain2, hadafMain3, hadafMain4, hadafMain5, hadafMain6, hadafMain7],  // 👈 array of images
+    images: [hadafMain, hadafMain1, hadafMain2, hadafMain3, hadafMain4, hadafMain5, hadafMain6, hadafMain7],
     alt: "App Landing",
     category: "Web Development",
     date: "07-May-2025",
@@ -84,7 +75,7 @@ export const cards = [
     id: 2,
     title: "Xconnect",
     subtitle: "Design, Development",
-    images: [cctvMian, cctvMian1, cctvMian2, cctvMian3, cctvMian4], // can still be a single item
+    images: [cctvMian, cctvMian1, cctvMian2, cctvMian3, cctvMian4],
     alt: "Medical Concept",
     category: "Web Development",
     date: "26-April-2025",
@@ -99,11 +90,8 @@ export const cards = [
     alt: "Marketing Dashboard",
     category: "Web Development",
     date: "22-October-2024",
-
-    description:
-      "This website, Telvas Library, provides a curated collection of educational cardiology videos, featuring expert talks on topics like the management of asymptomatic severe aortic stenosis. Users can browse and view multiple video lectures from renowned professionals, making it a valuable resource for medical knowledge sharing. The site offers an easy-to-navigate layout with direct access to archived and featured video content."
+    description: "This website, Telvas Library, provides a curated collection of educational cardiology videos, featuring expert talks on topics like the management of asymptomatic severe aortic stenosis. Users can browse and view multiple video lectures from renowned professionals, making it a valuable resource for medical knowledge sharing. The site offers an easy-to-navigate layout with direct access to archived and featured video content."
   },
-
   {
     id: 4,
     title: "VS Capital",
@@ -112,9 +100,7 @@ export const cards = [
     alt: "E-commerce Platform",
     category: "Web Development",
     date: "09-May-2024",
-
-    description:
-      "This website, VS Capital, is a Surat-based financial firm specializing in providing unsecured and secured loans up to ₹50,000 quickly within the city limits. It offers tailored loan solutions with clear eligibility criteria based on collateral assets, empowering individuals with financial support for various needs like business, education, or expenses. The site highlights transparency, integrity, and personalized assistance, featuring an enquiry form for easy customer interaction."
+    description: "This website, VS Capital, is a Surat-based financial firm specializing in providing unsecured and secured loans up to ₹50,000 quickly within the city limits. It offers tailored loan solutions with clear eligibility criteria based on collateral assets, empowering individuals with financial support for various needs like business, education, or expenses. The site highlights transparency, integrity, and personalized assistance, featuring an enquiry form for easy customer interaction."
   },
   {
     id: 5,
@@ -124,9 +110,7 @@ export const cards = [
     alt: "Brand Identity",
     category: "Web Development",
     date: "26-November-2024",
-
-    description:
-      "This website belongs to Team24, a company based in Surat that produces a wide range of beverages, foods, nutraceuticals, cosmetics, and health care products. With over 20 years of experience, Team24 offers diverse product categories including snacks, carbonated and still drinks, beauty care, and health supplements. The site features easy navigation for exploring product ranges, brands, distribution partners, and customer testimonials, highlighting their commitment to innovation and quality."
+    description: "This website belongs to Team24, a company based in Surat that produces a wide range of beverages, foods, nutraceuticals, cosmetics, and health care products. With over 20 years of experience, Team24 offers diverse product categories including snacks, carbonated and still drinks, beauty care, and health supplements. The site features easy navigation for exploring product ranges, brands, distribution partners, and customer testimonials, highlighting their commitment to innovation and quality."
   },
   {
     id: 6,
@@ -136,9 +120,7 @@ export const cards = [
     alt: "Social Media Campaign",
     category: "App Development",
     date: "22-August-2025",
-
-    description:
-      "ZupZap by Bex Technologies is the ultimate hyperdelivery platform connecting businesses with their own riders for seamless and efficient deliveries. ZupZap connects businesses with their own fleet of riders, streamlining delivery assignments and communication. Empowering businesses and riders alike, We ensure seamless, efficient operations in today’s fast-paced delivery world."
+    description: "ZupZap by Bex Technologies is the ultimate hyperdelivery platform connecting businesses with their own riders for seamless and efficient deliveries. ZupZap connects businesses with their own fleet of riders, streamlining delivery assignments and communication. Empowering businesses and riders alike, We ensure seamless, efficient operations in today’s fast-paced delivery world."
   },
   {
     id: 7,
@@ -148,9 +130,7 @@ export const cards = [
     alt: "Social Media Campaign",
     category: "App Development",
     date: "05-August-2025",
-
-    description:
-      "Call Buddy is a mobile app designed to help users manage incoming calls by organizing contacts, creating groups, and scheduling when calls should be silenced. It offers flexible options for call silencing, including weekly and date-range-based schedules, as well as advanced settings to block or silence unknown numbers. The interface is user-friendly, allowing easy setup and quick access to contact management and blocking features. Call Buddy ensures users maintain focus and privacy by automatically managing call interruptions during designated times."
+    description: "Call Buddy is a mobile app designed to help users manage incoming calls by organizing contacts, creating groups, and scheduling when calls should be silenced. It offers flexible options for call silencing, including weekly and date-range-based schedules, as well as advanced settings to block or silence unknown numbers. The interface is user-friendly, allowing easy setup and quick access to contact management and blocking features. Call Buddy ensures users maintain focus and privacy by automatically managing call interruptions during designated times."
   },
   {
     id: 8,
@@ -160,9 +140,7 @@ export const cards = [
     alt: "Social Media Campaign",
     category: "App Development",
     date: "11-November-2024",
-
-    description:
-      "This app features a clean and modern UI flow for user authentication and form submission, starting with a gradient-themed welcome and login screen that prompts for username and password. The subsequent forms allow doctors to enter professional details, hospital affiliation, and select options for uploading images or videos directly from camera or gallery. The interface uses purple accents for action buttons and input icons, maintaining visual consistency with intuitive prompts for file selection and data entry. It is designed for ease of use and quick onboarding, especially for medical professionals managing profile or report uploads."
+    description: "This app features a clean and modern UI flow for user authentication and form submission, starting with a gradient-themed welcome and login screen that prompts for username and password. The subsequent forms allow doctors to enter professional details, hospital affiliation, and select options for uploading images or videos directly from camera or gallery. The interface uses purple accents for action buttons and input icons, maintaining visual consistency with intuitive prompts for file selection and data entry. It is designed for ease of use and quick onboarding, especially for medical professionals managing profile or report uploads."
   },
   {
     id: 9,
@@ -172,9 +150,7 @@ export const cards = [
     alt: "Social Media Campaign",
     category: "App Development",
     date: "22-January-2024",
-
-    description:
-      "This app interface highlights a modern home appliances e-commerce design, featuring a prominent product carousel and quick category navigation for items like ACs and deep freezers. Users can search for products easily and view detailed listings with key specs, prices, and active discounts on electronics such as refrigerators and TVs. The clean layout ensures straightforward browsing, with visually engaging product images and clear separation between categories and search results. The app is tailored for a smooth shopping experience focused on appliances and consumer electronics."
+    description: "This app interface highlights a modern home appliances e-commerce design, featuring a prominent product carousel and quick category navigation for items like ACs and deep freezers. Users can search for products easily and view detailed listings with key specs, prices, and active discounts on electronics such as refrigerators and TVs. The clean layout ensures straightforward browsing, with visually engaging product images and clear separation between categories and search results. The app is tailored for a smooth shopping experience focused on appliances and consumer electronics."
   },
   {
     id: 10,
@@ -184,8 +160,6 @@ export const cards = [
     alt: "Social Media Campaign",
     category: "App Development",
     date: "22-January-2021",
-
-    description:
-      "This mobile app showcases an intuitive shopping interface for footwear, featuring a vibrant home screen with categorized options for men, women, and kids, along with prominent brand selections and discount banners. Users can browse a wide variety of shoes, view new arrivals, and filter selections by brand and category, making it easy to find and purchase products. Clean navigation, clear pricing, and size information ensure a smooth user experience from product discovery to checkout. The app’s design emphasizes usability and visual appeal for an engaging online shopping journey."
+    description: "This mobile app showcases an intuitive shopping interface for footwear, featuring a vibrant home screen with categorized options for men, women, and kids, along with prominent brand selections and discount banners. Users can browse a wide variety of shoes, view new arrivals, and filter selections by brand and category, making it easy to find and purchase products. Clean navigation, clear pricing, and size information ensure a smooth user experience from product discovery to checkout. The app’s design emphasizes usability and visual appeal for an engaging online shopping journey."
   },
 ];

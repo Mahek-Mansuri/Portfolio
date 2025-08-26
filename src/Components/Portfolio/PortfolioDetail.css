@@ -9,9 +9,7 @@
   border-radius: 10px;
   padding: 10px;
   display: block;
-  /* 👈 make it block */
   margin-left: 145px;
-  /* 👈 align to start */
   margin-bottom: 20px;
 }
 
@@ -57,42 +55,39 @@
     padding: 10px;
     display: block;
     margin: 0 auto;
-    /* margin-left: 145px; */
     margin-bottom: 20px;
   }
 
-  .project-carousel,.detail-img{
+  .project-carousel,
+  .detail-img {
     height: 245px !important;
     width: 100px;
   }
 
   .project-detail {
-        width: 95% !important;
+    width: 95% !important;
     border-radius: 10px;
     background: linear-gradient(145deg, rgba(8, 47, 73, 0.6), rgba(15, 23, 42, 0.8));
     color: white;
     margin: 0px auto;
     box-shadow: rgba(2, 6, 23, 0.65) 0px 10px 30px;
     padding: 10px;
-}
-  
+  }
+
   .project-detail h2 {
     padding-bottom: 20px;
     font-size: 20px;
-}
+  }
 
-.project-detail h4 {
+  .project-detail h4 {
     border-bottom: 1px solid gray;
     padding-bottom: 12px;
     font-size: 18px;
-}
+  }
 
-.project-detail p {
-   text-align: justify;
-  font-size: 14px;   /* Adjust for mobile readability */
-  line-height: 1.6;  /* Improves spacing */
-}
-
-
-
+  .project-detail p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }

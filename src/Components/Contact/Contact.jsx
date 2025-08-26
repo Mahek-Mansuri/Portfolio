@@ -1,4 +1,3 @@
-// ContactPage.jsx
 import React, { useRef, useEffect, useState, useContext } from "react";
 import emailjs from '@emailjs/browser';
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -27,7 +26,7 @@ function ContactPage() {
 
   const { theme } = useContext(ThemeContext);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState(null); // null | "error" | "success" | "sending"
+  const [status, setStatus] = useState(null);
   const [statusMessage, setStatusMessage] = useState("");
 
   useEffect(() => {
@@ -40,8 +39,7 @@ function ContactPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
-    
-    // Clear status when user starts typing again
+
     if (status) {
       setStatus(null);
       setStatusMessage("");
@@ -53,67 +51,63 @@ function ContactPage() {
       setStatusMessage("Please enter your name");
       return false;
     }
-    
+
     if (!form.email.trim()) {
       setStatusMessage("Please enter your email address");
       return false;
     }
-    
-    // More comprehensive email validation
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       setStatusMessage("Please enter a valid email address");
       return false;
     }
-    
+
     if (!form.message.trim()) {
       setStatusMessage("Please enter your message");
       return false;
     }
-    
+
     if (form.message.trim().length < 10) {
       setStatusMessage("Message should be at least 10 characters long");
       return false;
     }
-    
+
     return true;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!validate()) {
       setStatus("error");
       return;
     }
-    
-    // Set sending status
+
     setStatus("sending");
     setStatusMessage("Sending your message...");
-    
-    // Send email using EmailJS
+
     emailjs.sendForm(
-      'service_p0ki3px', // Replace with your EmailJS service ID
-      'template_xi2ovj5', // Replace with your EmailJS template ID
+      'service_p0ki3px',
+      'template_xi2ovj5',
       formRef.current,
-      'P0P1NshsmwaRrooLI' // Replace with your EmailJS public key
+      'P0P1NshsmwaRrooLI'
     )
-    .then((result) => {
-      console.log('Email successfully sent!', result.text);
-      setStatus("success");
-      setStatusMessage("Thanks! Your message has been sent successfully.");
-      setForm({ name: "", email: "", message: "" });
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setStatus(null);
-        setStatusMessage("");
-      }, 5000);
-    })
-    .catch((error) => {
-      console.error('Failed to send email:', error);
-      setStatus("error");
-      setStatusMessage("Sorry, there was a problem sending your message. Please try again later.");
-    });
+      .then((result) => {
+        console.log('Email successfully sent!', result.text);
+        setStatus("success");
+        setStatusMessage("Thanks! Your message has been sent successfully.");
+        setForm({ name: "", email: "", message: "" });
+
+        setTimeout(() => {
+          setStatus(null);
+          setStatusMessage("");
+        }, 5000);
+      })
+      .catch((error) => {
+        console.error('Failed to send email:', error);
+        setStatus("error");
+        setStatusMessage("Sorry, there was a problem sending your message. Please try again later.");
+      });
   };
 
   const descClass = theme === "dark" ? "mt-2 text-lg text-white" : "mt-2 text-lg text-white";
@@ -138,7 +132,6 @@ function ContactPage() {
           container.querySelectorAll(".ti-cursor").forEach((n) => (n.style.display = ""));
         }
       } catch (e) {
-        /* ignore DOM access issues */
       }
 
       requestAnimationFrame(() => {
@@ -171,7 +164,6 @@ function ContactPage() {
       observer.disconnect();
       window.removeEventListener("contact:retype", onEvent);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -258,11 +250,11 @@ function ContactPage() {
 
         <div className="right-section w-full md:w-1/2" style={{ background: theme === "dark" ? "rgba(15, 23, 42, 0.7)" : "white" }}>
           <main className="card ">
-            <form 
+            <form
               ref={formRef}
-              className="form" 
-              style={{ color: theme === "dark" ? "white" : "black" }} 
-              onSubmit={handleSubmit} 
+              className="form"
+              style={{ color: theme === "dark" ? "white" : "black" }}
+              onSubmit={handleSubmit}
               noValidate
             >
               <h2 className="form-head">Send a message</h2>
@@ -312,8 +304,8 @@ function ContactPage() {
               </label>
 
               <div className="actions">
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="btn-primary"
                   disabled={status === "sending"}
                 >
@@ -369,7 +361,7 @@ function ContactPage() {
                 style={{ textDecoration: "none", color: theme === "dark" ? "white" : "black" }}
               >
                 pinjari9222@gmail.com
-              </a>            
+              </a>
             </div>
             <div className="info-item">
               <i className="bi bi-geo-alt-fill icon"></i>

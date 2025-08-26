@@ -22,7 +22,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faLaptopCode, faEnvelope, faDownload } from "@fortawesome/free-solid-svg-icons";
 
-
 const About = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -33,7 +32,6 @@ const About = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
 
     if (id === 'contact') {
-      // tiny timeout so scroll has started and to reduce race with IntersectionObserver
       setTimeout(() => {
         window.dispatchEvent(new CustomEvent('contact:retype'));
       }, 40);
@@ -355,17 +353,6 @@ const About = () => {
                 <FontAwesomeIcon icon={faGithub} className="mr-2" />
                 GitHub
               </a>
-              {/* <a
-                href="../../Assets/Resume.pdf"
-                download
-                className={`cta-button px-5 py-3 no-underline rounded-lg font-medium flex items-center transition-all duration-300 ${theme === "dark"
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                  : "bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white"
-                  }`}
-              >
-                <FontAwesomeIcon icon={faDownload} className="mr-2" />
-                Download CV
-              </a> */}
               <a
                 href={`${process.env.PUBLIC_URL}/Resume.pdf`}
                 download="Sohel_Pinjari_CV.pdf"
@@ -378,12 +365,10 @@ const About = () => {
                 <FontAwesomeIcon icon={faDownload} className="mr-2" />
                 Download CV
               </a>
-
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 };

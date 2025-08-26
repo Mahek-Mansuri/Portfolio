@@ -1,12 +1,9 @@
 :root {
   --bg: #0f1724;
-  /* deep navy */
   --card: #0b1220;
   --glass: rgba(255, 255, 255, 0.04);
   --accent-1: #06b6d4;
-  /* cyan-ish */
   --accent-2: #7c3aed;
-  /* purple */
   --muted: rgba(255, 255, 255, 0.7);
 }
 
@@ -73,13 +70,11 @@
   width: 100%;
 }
 
-/* Keep the cursor DOM node present but hidden so TypeIt cleanup doesn't break */
 .ti-cursor-hidden {
   transition: opacity 200ms ease;
   opacity: 0 !important;
   pointer-events: none;
 }
-
 
 .right-section {
   width: 100%;
@@ -113,25 +108,20 @@
 .field-label {
   font-size: 13px;
   text-align: start;
-  /* color: var(--muted); */
   margin-bottom: 6px
 }
 
 .input,
 .textarea {
-  /* background: #171e30; */
-  /* border: 1px solid rgba(255, 255, 255, 0.06); */
   border: 1px solid gray;
   padding: 12px 14px;
   border-radius: 12px;
-  /* color: white; */
   outline: none;
   transition: all .18s ease;
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  /* color: rgba(255, 255, 255, 0.32) */
   color: gray;
 }
 
@@ -172,11 +162,9 @@
 }
 
 .btn-ghost {
-  /* background: transparent; */
   border: 1px solid gray;
   padding: 8px 12px;
   border-radius: 10px;
-  /* color: var(--muted); */
   cursor: pointer
 }
 
@@ -215,20 +203,15 @@
   border-radius: 12px;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.65);
-
   justify-content: center;
-  /* center horizontally */
   align-items: center;
-  /* center vertically */
   text-align: center;
-  /* text also centered */
 }
 
 .info-item {
   display: flex;
   align-items: center;
   justify-content: start;
-  /* center icon + text */
   flex: 1 1 calc(50% - 30px);
   padding: 12px 15px;
   border-radius: 8px;
@@ -244,7 +227,6 @@
 .icon {
   font-size: 20px;
   color: #0E7490;
-  /* cyan */
   margin-right: 8px;
 }
 
@@ -252,16 +234,12 @@
   font-size: 15px;
 }
 
-
-
-/* small touches */
 @media (min-width:920px) {
   .hero {
     min-height: 420px
   }
 }
 
-/* make focus outlines accessible */
 .input:focus,
 .textarea:focus,
 .btn-primary:focus,
@@ -271,12 +249,8 @@
 
 .contact-info {
   margin-left: 0px;
-  /* padding-left: 60px; */
 }
 
-/* Existing styles... */
-
-/* ===== Responsive Styles ===== */
 @media (max-width: 768px) {
   .Contact-section {
     width: 95%;
@@ -289,7 +263,6 @@
     width: 100% !important;
     padding: 2rem;
   }
-
 
   .left-section {
     background-color: #0e7490;
@@ -319,14 +292,11 @@
   .contact-info {
     flex-direction: column;
     align-items: start;
-    /* stack all items */
     gap: 20px;
-    /* more spacing */
   }
 
   .info-item {
     flex: 1 1 100%;
-    /* full width per row */
     justify-content: center;
     text-align: center;
   }
@@ -337,24 +307,18 @@
     width: 90%;
   }
 
-
   .right-section {
     padding: 2rem;
   }
 
-
   .contact-info {
     flex-direction: column;
-        align-items: start;
-
-    /* stack all items */
+    align-items: start;
     gap: 20px;
-    /* more spacing */
   }
 
   .info-item {
     flex: 1 1 100%;
-    /* full width per row */
     justify-content: center;
     text-align: center;
   }
@@ -369,13 +333,11 @@
     display: flex;
     align-items: center;
     flex: 1 1 calc(56% - 30px);
-    /* 2 items per row */
     padding: 12px 15px;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
   }
-
 
   .left-section,
   .right-section {
@@ -402,19 +364,14 @@
     font-size: 0.9rem;
   }
 
-
   .contact-info {
     flex-direction: column;
-        align-items: start;
-
-    /* stack all items */
+    align-items: start;
     gap: 20px;
-    /* more spacing */
   }
 
   .info-item {
     flex: 1 1 100%;
-    /* full width per row */
     justify-content: center;
     text-align: center;
   }
@@ -425,34 +382,25 @@
 
 }
 
-/* ===== Desktop Optimization ===== */
 @media (min-width: 1025px) {
   .Contact-section {
     width: 85%;
     max-width: 1400px;
   }
 
-
   .right-section {
     padding: 3rem;
   }
-
-
- 
 }
 
-/* ===== Orientation Handling ===== */
 @media (max-height: 600px) and (orientation: landscape) {
   .min-h-screen {
     min-height: 100vh;
     height: auto;
   }
 
-
   .Contact-section {
     flex-direction: row;
     height: auto;
   }
-
-
 }

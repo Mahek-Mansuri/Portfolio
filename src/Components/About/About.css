@@ -8,13 +8,11 @@
   align-items: center;
   padding: 3rem 1rem;
   position: relative;
-  /* overflow-x: hidden; */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .about-section::before {
   content: "";
-  /* position: absolute; */
   width: 100%;
   height: 100%;
   background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
@@ -312,7 +310,6 @@
 }
 
 /* Cards Section */
-/* Default Card Styling */
 .expertise-card,
 .card {
   border-radius: 1rem;
@@ -336,8 +333,6 @@
   font-weight: 600;
 }
 
-
-
 .card-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -359,7 +354,8 @@
 /* ☀️ Light Theme Fix */
 .light .card-title,
 .light .card-text {
-  color: #111827 !important; /* stronger contrast */
+  color: #111827 !important;
+  /* stronger contrast */
 }
 
 /* Buttons */
@@ -663,9 +659,6 @@
   color: #1e293b;
 }
 
-/* About.css */
-/* ... existing styles ... */
-
 /* Mobile Responsiveness */
 @media (max-width: 1200px) {
   .profile-card {
@@ -675,11 +668,6 @@
 }
 
 @media (max-width: 992px) {
-  /* .about-section {
-    padding: 2rem;
-    width: 100%;
-  } */
-
   .about-section {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height: 100vh;
@@ -689,16 +677,17 @@
     padding: 3rem 1rem;
     position: relative;
     margin-top: -1px;
-    /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-    .card-header {
+  .card-header {
     font-size: 15px;
   }
+
   .card-title {
     font-size: 1rem;
   }
+
   .card-text {
     font-size: 13px;
   }
@@ -723,11 +712,6 @@
 
 /* Tablet & Small Desktop */
 @media (max-width: 768px) {
-  /* .about-section {
-    padding: 1.5rem;
-    width: 100%;
-  } */
-
   .about-section {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height: 100vh;
@@ -737,11 +721,8 @@
     padding: 3rem 1rem;
     position: relative;
     margin-top: -1px;
-    /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
-  
 
   .card-title {
     text-align: center;
@@ -793,11 +774,6 @@
 
 /* Mobile Landscape */
 @media (max-width: 576px) and (orientation: landscape) {
-  /* .about-section {
-    padding: 1rem;
-    width: 100%;
-  } */
-
   .about-section {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height: 100vh;
@@ -807,23 +783,23 @@
     padding: 3rem 1rem;
     position: relative;
     margin-top: -1px;
-    /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  
-
   .cards-grid {
-    grid-template-columns: 1fr; /* stack in single column */
+    grid-template-columns: 1fr;
   }
+
   .card-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
+
   .card-title {
     font-size: 0.95rem;
   }
+
   .card-text {
     font-size: 12px;
     line-height: 1.5;
@@ -854,11 +830,6 @@
 
 /* Mobile Portrait */
 @media (max-width: 576px) {
-  /* .about-section {
-    padding: 1rem 0.5rem;
-    width: 100%;
-  } */
-
   .about-section {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height: 100vh;
@@ -868,10 +839,8 @@
     padding: 3rem 1rem;
     position: relative;
     margin-top: -1px;
-    /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
 
   .card-title {
     text-align: center;
@@ -948,11 +917,6 @@
 
 /* Small Mobile Devices */
 @media (max-width: 400px) {
-  /* .about-section {
-    padding: 1rem 0.25rem;
-    width: 100%;
-  } */
-
   .about-section {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height: 100vh;
@@ -962,11 +926,9 @@
     padding: 3rem 1rem;
     position: relative;
     margin-top: -1px;
-    /* overflow-x: hidden; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  
   .section-header h2 {
     font-size: 1.8rem;
   }

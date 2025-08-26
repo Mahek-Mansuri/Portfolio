@@ -14,7 +14,6 @@ import ps from "../../Assets/P&S/ps.jpg"
 import A1 from "../../Assets/A One Zone/A1.jpg"
 import A3 from "../../Assets/A one zone footwear/A3.jpg"
 
-
 const cards = [
   {
     id: 1,
@@ -64,7 +63,7 @@ const cards = [
     alt: "Social Media Campaign",
     category: "app development"
   },
-   {
+  {
     id: 7,
     title: "Call Buddy",
     subtitle: "Design, Development",
@@ -72,7 +71,7 @@ const cards = [
     alt: "Social Media Campaign",
     category: "app development"
   },
-   {
+  {
     id: 8,
     title: "P&S",
     subtitle: "Design, Development",
@@ -80,7 +79,7 @@ const cards = [
     alt: "Social Media Campaign",
     category: "app development"
   },
-   {
+  {
     id: 9,
     title: "A One Zone",
     subtitle: "Design, Development",
@@ -88,7 +87,7 @@ const cards = [
     alt: "Social Media Campaign",
     category: "app development"
   },
-   {
+  {
     id: 10,
     title: "A One Zone Footwear",
     subtitle: "Design, Development",
@@ -96,7 +95,6 @@ const cards = [
     alt: "Social Media Campaign",
     category: "app development"
   },
-  
 ];
 
 export default function Portfolio() {
@@ -104,35 +102,27 @@ export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("all");
   const navigate = useNavigate();
 
-  // --- load more / view more settings ---
-  const initialCount = 3;   // how many to show initially
-  // const increment = 3;      // how many to add per "Load more" click
+  const initialCount = 3;
   const [visibleCount, setVisibleCount] = useState(initialCount);
   const [expanded, setExpanded] = useState(false);
 
-  // Filtered array based on active filter
   const filteredCards = activeFilter === "all"
     ? cards
     : cards.filter(card => card.category === activeFilter);
 
-  // Slice to only the visible ones
   const visibleCards = filteredCards.slice(0, visibleCount);
 
-  // categories list
   const categories = [...new Set(cards.map(card => card.category))];
 
- const handleProjectClick = (projectId) => {
-  // scroll to top of window first, then navigate
-  window.scrollTo({ top: 0, behavior: 'auto' });
-  navigate(`/project/${projectId}`);
-};
+  const handleProjectClick = (projectId) => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    navigate(`/project/${projectId}`);
+  };
 
-  // Reset visible count when filter changes
   useEffect(() => {
     setVisibleCount(initialCount);
     setExpanded(false);
   }, [activeFilter]);
-
 
   function handleToggleAll() {
     if (expanded) {
@@ -205,19 +195,16 @@ export default function Portfolio() {
         </Row>
 
         {/* Controls: Load more / View more */}
-        <div className="gap-2" style={{paddingBottom:'90px'}}>
-         
+        <div className="gap-2" style={{ paddingBottom: '90px' }}>
           <button
             type="button"
             className={`btn ${expanded ? 'btn-secondary' : 'btn-dark'}`}
-            style={{background:"#0e7490" ,color:'white'}}
+            style={{ background: "#0e7490", color: 'white' }}
             onClick={handleToggleAll}
             aria-pressed={expanded}
           >
             {expanded ? 'Show less' : 'View more'}
           </button>
-
-        
         </div>
       </Container>
     </section>

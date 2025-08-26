@@ -9,7 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/project/:id" element={<PortfolioDetail />} />
-        {/* Add a catch-all route for undefined paths */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>

@@ -5,18 +5,16 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { Sun, Moon } from 'lucide-react';
 import { ThemeContext } from '../../Context/ThemeContext';
-import { useNavigate } from 'react-router-dom'; // Add this import
+import { useNavigate } from 'react-router-dom';
 import navLogo from '../../Assets/nav-logo.png'
 import navLogo1 from '../../Assets/nav-logo1.png'
 
 export default function Home() {
-  const navigate = useNavigate(); // Initialize navigate
-  
+  const navigate = useNavigate();
+
   const scrollToSection = (id) => {
-    // If we're not on the home page, navigate first
     if (window.location.pathname !== '/') {
       navigate('/');
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -39,64 +37,63 @@ export default function Home() {
 
   return (
     <div className={`${theme === 'dark' ? "DevPic" : "DevPic1"}`}>
-      <Navbar 
-        expand="md" 
-        variant="dark" 
+      <Navbar
+        expand="md"
+        variant="dark"
         className={`${theme === 'dark' ? "custom-navbar" : "custom-navbar1"}`}
-        collapseOnSelect 
+        collapseOnSelect
         expanded={expanded}
       >
 
-        <Navbar.Brand 
-            href="#"
-            onClick={() => navigate('/')} // Navigate to home when brand is clicked
-            className='logo-sohel'
-          >
-            <img src={theme === "dark" ? navLogo : navLogo1}  alt='logo'/>
-           
-          </Navbar.Brand>
-        <Container fluid="lg" className="px-4 hamburgr">
-          
+        <Navbar.Brand
+          href="#"
+          onClick={() => navigate('/')}
+          className='logo-sohel'
+        >
+          <img src={theme === "dark" ? navLogo : navLogo1} alt='logo' />
 
-          <Navbar.Toggle 
-            aria-controls="main-navbar" 
-            className="custom-toggler" 
+        </Navbar.Brand>
+        <Container fluid="lg" className="px-4 hamburgr">
+
+          <Navbar.Toggle
+            aria-controls="main-navbar"
+            className="custom-toggler"
             onClick={() => setExpanded(expanded ? false : "expanded")}
           />
 
-          <Navbar.Collapse 
-            id="main-navbar" 
-            className="justify-content-end" 
+          <Navbar.Collapse
+            id="main-navbar"
+            className="justify-content-end"
             style={{ backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.6)" }}
           >
             <Nav className="align-items-center">
-               <Nav.Item className="Nav-items">
-                <Nav.Link 
-                  onClick={() => scrollToSection('home')} 
+              <Nav.Item className="Nav-items">
+                <Nav.Link
+                  onClick={() => scrollToSection('home')}
                   className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}
                 >
                   Home
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="Nav-items">
-                <Nav.Link 
-                  onClick={() => scrollToSection('portfolio')} 
+                <Nav.Link
+                  onClick={() => scrollToSection('portfolio')}
                   className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}
                 >
                   Portfolio
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="Nav-items">
-                <Nav.Link 
-                  onClick={() => scrollToSection('about')} 
+                <Nav.Link
+                  onClick={() => scrollToSection('about')}
                   className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}
                 >
                   About Me
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="Nav-items">
-                <Nav.Link 
-                  onClick={() => scrollToSection('contact')} 
+                <Nav.Link
+                  onClick={() => scrollToSection('contact')}
                   className={`${theme === 'dark' ? "Nav-link" : "Nav-link1"}`}
                 >
                   Contact
