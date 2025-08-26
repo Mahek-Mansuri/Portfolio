@@ -138,55 +138,54 @@ export const cards = [
     date: "22-August-2025",
 
     description:
-      // "The ZupZap app provides a streamlined order management dashboard for delivery services, including clear sections for active and completed orders, payment details, and customer addresses. The interface features easy toggles for online status, intuitive tab-based navigation, and buttons for order status updates like 'Set as Picked Up' and 'Delivered'. Users can conveniently view, process, and track their orders, with secure login functionality and quick access to account options through a side menu. The green-and-white color palette reinforces brand identity and ensures a clean, professional appearance throughout the app."
-  "ZupZap by Bex Technologies is the ultimate hyperdelivery platform connecting businesses with their own riders for seamless and efficient deliveries. ZupZap connects businesses with their own fleet of riders, streamlining delivery assignments and communication. Empowering businesses and riders alike, We ensure seamless, efficient operations in today’s fast-paced delivery world."
-    },
-   {
+      "ZupZap by Bex Technologies is the ultimate hyperdelivery platform connecting businesses with their own riders for seamless and efficient deliveries. ZupZap connects businesses with their own fleet of riders, streamlining delivery assignments and communication. Empowering businesses and riders alike, We ensure seamless, efficient operations in today’s fast-paced delivery world."
+  },
+  {
     id: 7,
     title: "Call Buddy",
     subtitle: "Design, Development",
     images: [callbuddy, callbuddy1, callbuddy2, callbuddy3, callbuddy4, callbuddy5, callbuddy6],
     alt: "Social Media Campaign",
     category: "App Development",
-    date: "22-August-2025",
+    date: "05-August-2025",
 
     description:
-     "Call Buddy is a mobile app designed to help users manage incoming calls by organizing contacts, creating groups, and scheduling when calls should be silenced. It offers flexible options for call silencing, including weekly and date-range-based schedules, as well as advanced settings to block or silence unknown numbers. The interface is user-friendly, allowing easy setup and quick access to contact management and blocking features. Call Buddy ensures users maintain focus and privacy by automatically managing call interruptions during designated times."
+      "Call Buddy is a mobile app designed to help users manage incoming calls by organizing contacts, creating groups, and scheduling when calls should be silenced. It offers flexible options for call silencing, including weekly and date-range-based schedules, as well as advanced settings to block or silence unknown numbers. The interface is user-friendly, allowing easy setup and quick access to contact management and blocking features. Call Buddy ensures users maintain focus and privacy by automatically managing call interruptions during designated times."
   },
-   {
+  {
     id: 8,
     title: "P&S",
     subtitle: "Design, Development",
-    images: [ps, ps1, ps2, ps3, ps4, ps5 ],
+    images: [ps, ps1, ps2, ps3, ps4, ps5],
     alt: "Social Media Campaign",
     category: "App Development",
-    date: "22-August-2025",
+    date: "11-November-2024",
 
     description:
-     "This app features a clean and modern UI flow for user authentication and form submission, starting with a gradient-themed welcome and login screen that prompts for username and password. The subsequent forms allow doctors to enter professional details, hospital affiliation, and select options for uploading images or videos directly from camera or gallery. The interface uses purple accents for action buttons and input icons, maintaining visual consistency with intuitive prompts for file selection and data entry. It is designed for ease of use and quick onboarding, especially for medical professionals managing profile or report uploads."
+      "This app features a clean and modern UI flow for user authentication and form submission, starting with a gradient-themed welcome and login screen that prompts for username and password. The subsequent forms allow doctors to enter professional details, hospital affiliation, and select options for uploading images or videos directly from camera or gallery. The interface uses purple accents for action buttons and input icons, maintaining visual consistency with intuitive prompts for file selection and data entry. It is designed for ease of use and quick onboarding, especially for medical professionals managing profile or report uploads."
   },
-   {
+  {
     id: 9,
     title: "A One Zone",
     subtitle: "Design, Development",
-    images: [A1,A2],
+    images: [A1, A2],
     alt: "Social Media Campaign",
     category: "App Development",
-    date: "24-August-2025",
+    date: "22-January-2024",
 
     description:
-     "This app interface highlights a modern home appliances e-commerce design, featuring a prominent product carousel and quick category navigation for items like ACs and deep freezers. Users can search for products easily and view detailed listings with key specs, prices, and active discounts on electronics such as refrigerators and TVs. The clean layout ensures straightforward browsing, with visually engaging product images and clear separation between categories and search results. The app is tailored for a smooth shopping experience focused on appliances and consumer electronics."
+      "This app interface highlights a modern home appliances e-commerce design, featuring a prominent product carousel and quick category navigation for items like ACs and deep freezers. Users can search for products easily and view detailed listings with key specs, prices, and active discounts on electronics such as refrigerators and TVs. The clean layout ensures straightforward browsing, with visually engaging product images and clear separation between categories and search results. The app is tailored for a smooth shopping experience focused on appliances and consumer electronics."
   },
   {
     id: 10,
     title: "A One Zone Footwear",
     subtitle: "Design, Development",
-    images: [A3,A4, A5],
+    images: [A3, A4, A5],
     alt: "Social Media Campaign",
     category: "App Development",
-    date: "24-August-2025",
+    date: "22-January-2021",
 
     description:
-     "This mobile app showcases an intuitive shopping interface for footwear, featuring a vibrant home screen with categorized options for men, women, and kids, along with prominent brand selections and discount banners. Users can browse a wide variety of shoes, view new arrivals, and filter selections by brand and category, making it easy to find and purchase products. Clean navigation, clear pricing, and size information ensure a smooth user experience from product discovery to checkout. The app’s design emphasizes usability and visual appeal for an engaging online shopping journey."
+      "This mobile app showcases an intuitive shopping interface for footwear, featuring a vibrant home screen with categorized options for men, women, and kids, along with prominent brand selections and discount banners. Users can browse a wide variety of shoes, view new arrivals, and filter selections by brand and category, making it easy to find and purchase products. Clean navigation, clear pricing, and size information ensure a smooth user experience from product discovery to checkout. The app’s design emphasizes usability and visual appeal for an engaging online shopping journey."
   },
 ];
