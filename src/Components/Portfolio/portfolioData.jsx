@@ -138,8 +138,9 @@ export const cards = [
     date: "22-August-2025",
 
     description:
-      "The ZupZap app provides a streamlined order management dashboard for delivery services, including clear sections for active and completed orders, payment details, and customer addresses. The interface features easy toggles for online status, intuitive tab-based navigation, and buttons for order status updates like 'Set as Picked Up' and 'Delivered'. Users can conveniently view, process, and track their orders, with secure login functionality and quick access to account options through a side menu. The green-and-white color palette reinforces brand identity and ensures a clean, professional appearance throughout the app."
-  },
+      // "The ZupZap app provides a streamlined order management dashboard for delivery services, including clear sections for active and completed orders, payment details, and customer addresses. The interface features easy toggles for online status, intuitive tab-based navigation, and buttons for order status updates like 'Set as Picked Up' and 'Delivered'. Users can conveniently view, process, and track their orders, with secure login functionality and quick access to account options through a side menu. The green-and-white color palette reinforces brand identity and ensures a clean, professional appearance throughout the app."
+  "ZupZap by Bex Technologies is the ultimate hyperdelivery platform connecting businesses with their own riders for seamless and efficient deliveries.ZupZap connects businesses with their own fleet of riders, streamlining delivery assignments and communication. Empowering businesses and riders alike, We ensure seamless, efficient operations in today’s fast-paced delivery world."
+    },
    {
     id: 7,
     title: "Call Buddy",
